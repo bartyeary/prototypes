@@ -1,0 +1,158 @@
+.no-select{
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select:none;
+	user-select: none;
+}
+
+.shake{
+	transform-origin: 50%, 90%;
+	animation: shakey .1s ease-in-out 20 alternate;
+}
+
+@keyframes shakey {
+	0% {
+		transform: rotate(1deg);
+	}
+	100% {
+		transform: rotate(-1deg);
+	}
+}
+
+#blender{
+	position:absolute;
+	top: 0px;
+	left: 300px;
+}
+.liquid{
+	position:absolute;
+	top: 500px;
+	left: 300px;
+}
+#liquidsvg{
+	position:absolute;
+}
+
+.chomper{
+	position:absolute;
+	top: 300px;
+	left: 400px;
+	border-radius: 40px;
+	width: 100px;
+	height: 100px;
+	background-color: #FFF;
+/*	animation: spinChomp 1s cubic-bezier(0.5, -0.5, 0.5, 1.5) infinite;
+*/}
+
+/*@keyframes spinChomp {
+	0% {transform: rotate(0);}
+	100% {transform: rotate(720deg); }
+}*/
+
+.spinner{
+	animation: spinner 1s cubic-bezier(0.5, -0.5, 0.5, 1.5) 20;
+}
+
+@keyframes spinner{
+	0% {transform: rotate(0);}
+	100% {transform: rotate(720deg);}
+}
+
+.foodA{
+	position:absolute;
+	top: 200px;
+	left: 200px;
+	border-radius: 50%;
+	width: 70px;
+	height: 70px;
+	transform: translate(-50%, -50%);
+	background-color: #87FF9C;
+	z-index: 1;
+	cursor: pointer;
+}
+#letterA{
+	position:relative;
+	text-align: center;
+	top: 14px;
+	-webkit-user-select: none;
+	font-size: 3em;
+}
+
+.foodB{
+	position:absolute;
+	border-radius: 50%;
+	width: 70px;
+	height: 70px;
+	transform: translate(-50%, -50%);
+	background-color: #7D6DFF;
+	z-index: 2;
+	cursor: pointer;
+	-webkit-user-select: none;
+}
+#letterB{
+	position:relative;
+	text-align: center;
+	top: 14px;
+	-webkit-user-select: none;
+	font-size: 3em;
+}
+
+.foodC{
+	position:absolute;
+	border-radius: 50%;
+	width: 70px;
+	height: 70px;
+	transform: translate(-50%, -50%);
+	background-color: #FC68FF;
+	z-index: 3;
+	cursor: pointer;
+}
+#letterC{
+	position:relative;
+	text-align: center;
+	top: 14px;
+	-webkit-user-select: none;
+	font-size: 3em;
+}
+
+#splatterA {
+	position: absolute;
+	width: 305px;
+	height: 210px;
+	top: 100px;
+	left: 400px;
+}
+#splatterB {
+	position: absolute;
+	width: 305px;
+	height: 210px;
+	top: 100px;
+	left: 400px;
+}
+#splatterC {
+	position: absolute;
+	width: 305px;
+	height: 210px;
+	top: 100px;
+	left: 400px;
+}
+
+#splatterMask {
+	display: block;
+	width: 305px;
+	height: 210px;
+	background: url('../images/pinkSplat.png');
+	animation: splatterMove 10s steps(9) infinite;
+}
+
+@keyframes splatterMove {
+	0%{background-position: 0px;}
+	10%{background-position: -2745px;}
+}
+
+.splatter-sprite {
+	width: 305px;
+	height: 210px;
+}
