@@ -27,6 +27,9 @@ var star = document.querySelector(".mascot_star");
 
 star.style.visibility = "hidden";
 donut.style.visibility = "hidden";
+splatterA.style.visibility = "hidden";
+splatterB.style.visibility = "hidden";
+splatterC.style.visibility = "hidden";
 
 var activeFood = null;
 var activeLetter = null;
@@ -64,6 +67,9 @@ function blendingFood(){
 }
 
 function endAnimation(){
+	splatterA.style.visibility = "hidden";
+	splatterB.style.visibility = "hidden";
+	splatterC.style.visibility = "hidden";
 	blender.classList.remove("shake");
 	chomper.classList.remove("spinner");
 	blendingFood();
@@ -78,11 +84,11 @@ function clickFood(event){
 	activeFood = event.currentTarget;
 	activeLetter = activeFood.dataset.letter;
 	if(activeLetter === "A"){
-		letterA.style.top = "29px";
+		letterA.style.top = "33px";
 	} else if (activeLetter === "B"){
-		letterB.style.top = "29px";
+		letterB.style.top = "33px";
 	} else {
-		letterC.style.top = "29px";
+		letterC.style.top = "33px";
 	}
 	activeFood.style.height = "100px";
 	activeFood.style.width = "100px";
@@ -98,9 +104,9 @@ function dragFood(event){
 }
 
 function dropFood(){
-	letterA.style.top = "14px";
-	letterB.style.top = "14px";
-	letterC.style.top = "14px";
+	letterA.style.top = "18px";
+	letterB.style.top = "18px";
+	letterC.style.top = "18px";
 	activeFoodZ = activeFoodZ +1;
 	activeFood.style.height = "70px";
 	activeFood.style.width = "70px";
@@ -117,8 +123,8 @@ function dropFood(){
 			chomper.style.backgroundColor = foodAColor;
 			splatterA.style.visibility = "visible";
 			// liquidsvg.style.fill = foodAColor;
-			star.style.visibility = "hidden";
-			donut.style.visibility = "hidden";
+			// star.style.visibility = "hidden";
+			// donut.style.visibility = "hidden";
 			centerElementAt(activeFood, chomperCenter[0], chomperCenter[1]);
 		} else if (activeFood === foodB){
 			activeFood.style.visibility = "hidden";
@@ -127,8 +133,8 @@ function dropFood(){
 			chomper.style.backgroundColor = foodBColor;
 			splatterB.style.visibility = "visible";
 			// liquidsvg.style.fill = foodBColor;
-			star.style.visibility = "visible";
-			donut.style.visibility = "hidden";
+			// star.style.visibility = "visible";
+			// donut.style.visibility = "hidden";
 			centerElementAt(activeFood, chomperCenter[0], chomperCenter[1]);
 		} else {
 			activeFood.style.visibility = "hidden";
@@ -137,8 +143,8 @@ function dropFood(){
 			chomper.style.backgroundColor = foodCColor;
 			splatterC.style.visibility = "visible";
 			// liquidsvg.style.fill = foodCColor;
-			star.style.visibility = "hidden";
-			donut.style.visibility = "visible";
+			// star.style.visibility = "hidden";
+			// donut.style.visibility = "visible";
 			centerElementAt(activeFood, chomperCenter[0], chomperCenter[1]);
 		}
 		

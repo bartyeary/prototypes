@@ -75,9 +75,9 @@
 #letterA{
 	position:relative;
 	text-align: center;
-	top: 14px;
+	top: 18px;
 	-webkit-user-select: none;
-	font-size: 3em;
+	font-size: 2em;
 }
 
 .foodB{
@@ -94,9 +94,9 @@
 #letterB{
 	position:relative;
 	text-align: center;
-	top: 14px;
+	top: 18px;
 	-webkit-user-select: none;
-	font-size: 3em;
+	font-size: 2em;
 }
 
 .foodC{
@@ -112,9 +112,9 @@
 #letterC{
 	position:relative;
 	text-align: center;
-	top: 14px;
+	top: 18px;
 	-webkit-user-select: none;
-	font-size: 3em;
+	font-size: 2em;
 }
 
 #splatterA {
@@ -139,17 +139,32 @@
 	left: 400px;
 }
 
-#splatterMask {
+#splatterMaskA {
+	display: block;
+	width: 305px;
+	height: 210px;
+	background: url('../images/greenSplat.png');
+	animation: splatterMove 1s steps(9) infinite;
+}
+#splatterMaskB {
+	display: block;
+	width: 305px;
+	height: 210px;
+	background: url('../images/purpleSplat.png');
+	animation: splatterMove 1s steps(9) infinite;
+}
+#splatterMaskC {
 	display: block;
 	width: 305px;
 	height: 210px;
 	background: url('../images/pinkSplat.png');
-	animation: splatterMove 10s steps(9) infinite;
+	animation: splatterMove 1s steps(9) infinite;
 }
+
 
 @keyframes splatterMove {
 	0%{background-position: 0px;}
-	10%{background-position: -2745px;}
+	10%{background-position: 2745px;}
 }
 
 .splatter-sprite {
