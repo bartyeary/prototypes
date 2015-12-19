@@ -6,6 +6,58 @@
 	-ms-user-select:none;
 	user-select: none;
 }
+#blender{
+	position:absolute;
+	top: 70px;
+	left: 300px;
+}
+
+#liquidsvg{
+	position:absolute;
+	width: 119px;
+	left: 391px;
+	top: 354px;
+}
+.wavemask {
+	position:absolute;
+	top: 337px;
+	left: 391px;
+	width: 119px;
+	height: 110px;
+	overflow: hidden;
+}
+
+.wave {
+	width:240px;
+	height:17px;
+	background:url('../images/waves.svg') repeat-x;
+	margin-top:0px;
+}
+
+.wavemover{
+	width:240px;
+	height:17px;
+	background:url('../images/waves.svg') repeat-x;
+	animation: wave .5s;
+		-webkit-animation: wave .5s; /* Safari and Chrome */
+		animation-iteration-count: 10;
+		animation-timing-function: linear;
+		-webkit-animation-iteration-count: infinite;
+		-webkit-animation-timing-function: linear;
+	}
+
+	@keyframes wave
+	{
+		0% {transform: translate3d(0,0,0);}
+		100% {transform: translate3d(-100px,0,0);}
+	}
+
+	@-webkit-keyframes wave /* Safari and Chrome */
+	{
+		0% {-webkit-transform: translate3d(0,0,0);}
+		100% {-webkit-transform: translate3d(-100px,0,0);}
+}
+
 
 .shake{
 	transform-origin: 50%, 90%;
@@ -21,19 +73,6 @@
 	}
 }
 
-#blender{
-	position:absolute;
-	top: 0px;
-	left: 300px;
-}
-.liquid{
-	position:absolute;
-	top: 500px;
-	left: 300px;
-}
-#liquidsvg{
-	position:absolute;
-}
 
 .chomper{
 	position:absolute;
@@ -57,7 +96,7 @@
 
 @keyframes spinner{
 	0% {transform: rotate(0);}
-	100% {transform: rotate(720deg);}
+	100% {transform: rotate(-720deg);}
 }
 
 .foodA{
@@ -119,24 +158,19 @@
 
 #splatterA {
 	position: absolute;
-	width: 305px;
-	height: 210px;
-	top: 70px;
+	top: 100px;
 	left: 300px;
 }
 #splatterB {
 	position: absolute;
-	width: 305px;
-	height: 210px;
-	top: 50px;
-	left: 200px;
+	top: 100px;
+	left: 300px;
 }
 #splatterC {
 	position: absolute;
-	width: 305px;
-	height: 210px;
+	width: 50%;
 	top: 100px;
-	left: 400px;
+	left: 300px;
 }
 
 #splatterMaskA {
@@ -161,13 +195,8 @@
 	animation: splatterMove 1s steps(9) infinite;
 }
 
-
 @keyframes splatterMove {
 	0%{background-position: 0px;}
 	10%{background-position: 2745px;}
 }
 
-.splatter-sprite {
-	width: 305px;
-	height: 210px;
-}
