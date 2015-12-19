@@ -15,12 +15,13 @@
 #liquidsvg{
 	position:absolute;
 	width: 119px;
+	height: 110px;
 	left: 391px;
-	top: 354px;
+	top: 335px;
 }
 .wavemask {
 	position:absolute;
-	top: 337px;
+	top: 334px;
 	left: 391px;
 	width: 119px;
 	height: 110px;
@@ -28,16 +29,12 @@
 }
 
 .wave {
+	position:absolute;
 	width:240px;
 	height:17px;
-	background:url('../images/waves.svg') repeat-x;
-	margin-top:0px;
 }
 
-.wavemover{
-	width:240px;
-	height:17px;
-	background:url('../images/waves.svg') repeat-x;
+.wavemover {
 	animation: wave .5s;
 		-webkit-animation: wave .5s; /* Safari and Chrome */
 		animation-iteration-count: 10;
@@ -48,15 +45,11 @@
 
 	@keyframes wave
 	{
-		0% {transform: translate3d(0,0,0);}
-		100% {transform: translate3d(-100px,0,0);}
+		0% {transform: translateX(-100px);}
+		100% {transform: translateX(-50px);}
 	}
 
-	@-webkit-keyframes wave /* Safari and Chrome */
-	{
-		0% {-webkit-transform: translate3d(0,0,0);}
-		100% {-webkit-transform: translate3d(-100px,0,0);}
-}
+	
 
 
 .shake{
@@ -168,7 +161,6 @@
 }
 #splatterC {
 	position: absolute;
-	width: 50%;
 	top: 100px;
 	left: 300px;
 }
