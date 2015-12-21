@@ -31,9 +31,6 @@ liquidsvg.style.fill = "#FFFFFF";
 
 star.style.visibility = "hidden";
 donut.style.visibility = "hidden";
-splatterA.style.visibility = "hidden";
-splatterB.style.visibility = "hidden";
-splatterC.style.visibility = "hidden";
 wave.style.visibility = "hidden";
 
 var activeFood = null;
@@ -72,9 +69,12 @@ function blendingFood(){
 }
 
 function endAnimation(){
-	splatterA.style.visibility = "hidden";
-	splatterB.style.visibility = "hidden";
-	splatterC.style.visibility = "hidden";
+	// splatterA.style.visibility = "hidden";
+	// splatterB.style.visibility = "hidden";
+	// splatterC.style.visibility = "hidden";
+	splatterA.classList.remove("splatteringA");
+	splatterB.classList.remove("splatteringB");
+	splatterC.classList.remove("splatteringC");
 	blender.classList.remove("shake");
 	chomper.classList.remove("spinner");
 	wave.style.visibility = "hidden";
@@ -128,7 +128,7 @@ function dropFood(){
 			blender.classList.add("shake");
 			chomper.classList.add("spinner");
 			// chomper.style.backgroundColor = foodAColor;
-			splatterA.style.visibility = "visible";
+			splatterA.classList.add("splatteringA");
 			wave.style.visibility = "visible";
 			wave.classList.add("wavemover");
 			wave.style.fill = foodAColor;
@@ -141,7 +141,7 @@ function dropFood(){
 			blender.classList.add("shake");
 			chomper.classList.add("spinner");
 			// chomper.style.backgroundColor = foodBColor;
-			splatterB.style.visibility = "visible";
+			splatterB.classList.add("splatteringB");
 			wave.style.visibility = "visible";
 			wave.classList.add("wavemover");
 			wave.style.fill = foodBColor;
@@ -154,7 +154,7 @@ function dropFood(){
 			blender.classList.add("shake");
 			chomper.classList.add("spinner");
 			// chomper.style.backgroundColor = foodCColor;
-			splatterC.style.visibility = "visible";
+			splatterC.classList.add("splatteringC");
 			wave.style.visibility = "visible";
 			wave.classList.add("wavemover");
 			wave.style.fill = foodCColor;

@@ -1,3 +1,10 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto; /* Prevent margin collapsing on top element */
+}
 .no-select{
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
@@ -8,8 +15,8 @@
 }
 #blender{
 	position:absolute;
-	top: 70px;
-	left: 300px;
+	top: 75px;
+	left: 310px;
 }
 
 #liquidsvg{
@@ -69,11 +76,11 @@
 
 .chomper{
 	position:absolute;
-	top: 300px;
-	left: 400px;
+	top: 100px;
+	left: 372px;
 	border-radius: 40px;
-	width: 100px;
-	height: 100px;
+	width: 150px;
+	height: 150px;
 	background-color: #FFF;
 /*	animation: spinChomp 1s cubic-bezier(0.5, -0.5, 0.5, 1.5) infinite;
 */}
@@ -151,44 +158,50 @@
 
 #splatterA {
 	position: absolute;
-	top: 100px;
-	left: 300px;
+	top: 300px;
+	left: 365px;
 }
 #splatterB {
 	position: absolute;
-	top: 100px;
-	left: 300px;
+	top: 300px;
+	left: 365px;
 }
 #splatterC {
 	position: absolute;
-	top: 100px;
-	left: 300px;
+	top: 300px;
+	left: 365px;
 }
 
 #splatterMaskA {
 	display: block;
-	width: 305px;
-	height: 210px;
-	background: url('../images/greenSplat.png');
-	animation: splatterMove 1s steps(9) infinite;
+	width: 175px;
+	height: 125px;
 }
 #splatterMaskB {
 	display: block;
-	width: 305px;
-	height: 210px;
-	background: url('../images/purpleSplat.png');
-	animation: splatterMove 1s steps(9) infinite;
+	width: 175px;
+	height: 125px;
 }
 #splatterMaskC {
 	display: block;
-	width: 305px;
-	height: 210px;
+	width: 175px;
+	height: 125px;
+}
+.splatteringA{
+	background: url('../images/greenSplat.png');
+	animation: splatterMove 1s steps(12) infinite;
+}
+.splatteringB{
+	background: url('../images/purpleSplat.png');
+	animation: splatterMove 1s steps(12) infinite;
+}
+.splatteringC{
 	background: url('../images/pinkSplat.png');
-	animation: splatterMove 1s steps(9) infinite;
+	animation: splatterMove 1s steps(12) infinite;
 }
 
 @keyframes splatterMove {
 	0%{background-position: 0px;}
-	10%{background-position: 2745px;}
+	100%{background-position: 2100px;}
 }
 
