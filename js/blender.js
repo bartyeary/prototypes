@@ -95,6 +95,11 @@ function beginPour(){
 
 function endPour(){
 	combinedColor = "#FFF";
+	appleNum = 0;
+	strawberryNum = 0;
+	bananaNum = 0;
+	blender.removeEventListener();
+	pitcherPour.removeEventListener();
 	liquidsvg.style.visibility = "hidden";
 	pitcherPour.classList.remove("pour");
 	pitcherLift.classList.remove("lift");
