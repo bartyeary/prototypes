@@ -2,9 +2,42 @@ html, body {
 	margin: 0;
 	padding: 0;
 	width: 100%;
-	height: 100%; 
+	height: 100%;
 	overflow: auto; /* Prevent margin collapsing on top element */
 }
+.strawberry{
+	position:absolute;
+	top: 200px;
+	left: 200px;
+	width: 70px;
+	height: 70px;
+	transform: translate(-50%, -50%);
+	z-index: 101;
+	cursor: pointer;
+}
+
+.banana{
+	position:absolute;
+	top: 30px;
+	left: 200px;
+	width: 70px;
+	height: 70px;
+	transform: translate(-50%, -50%);
+	z-index: 102;
+	cursor: pointer;
+}
+
+.apple{
+	position:absolute;
+	top: 200px;
+	left: 200px;
+	width: 70px;
+	height: 70px;
+	transform: translate(-50%, -50%);
+	z-index: 103;
+	cursor: pointer;
+}
+
 .no-select{
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
@@ -13,26 +46,64 @@ html, body {
 	-ms-user-select:none;
 	user-select: none;
 }
+.addfood{
+	position:absolute;
+	top: 10px;
+	left: 10px;
+	z-index: 1000px;
+}
+
+#blenderButton{
+	position:absolute;
+	top:270px;
+	left:36px;
+	text-decoration: none;
+	z-index: 202;
+}
+#pitcherPour{
+	position:absolute;
+	width: 210px;
+	height: 250px;
+	top: -30px;
+	left: 5px;
+	z-index: 205;
+}
+#pitcherLift{
+	position:absolute;
+}
+#blenderBottom{
+	position:absolute;
+	width: 210px;
+	height: 250px;
+	top: 200px;
+	left: 10px;
+	z-index: 200;
+}
 #blender{
 	position:absolute;
-	top: 75px;
-	left: 310px;
+	top: 210px;
+	left: 210px;
+	width: 250px;
+	height: 600px;
+	z-index: 199;
 }
 
 #liquidsvg{
 	position:absolute;
-	width: 119px;
-	height: 110px;
-	left: 391px;
-	top: 335px;
+	width: 100px;
+	height: 100px;
+	top: 140px;
+	left: 60px;
+	z-index: 6;
 }
 .wavemask {
 	position:absolute;
-	top: 334px;
-	left: 391px;
-	width: 119px;
-	height: 110px;
+	width: 100px;
+	height: 100px;
+	top: 140px;
+	left: 60px;
 	overflow: hidden;
+	z-index: 5;
 }
 
 .wave {
@@ -56,9 +127,6 @@ html, body {
 		100% {transform: translateX(-50px);}
 	}
 
-	
-
-
 .shake{
 	transform-origin: 50%, 90%;
 	animation: shakey .1s ease-in-out 20 alternate;
@@ -73,22 +141,63 @@ html, body {
 	}
 }
 
+.lift {
+	z-index: 300;
+	transform-origin: 50%, 50%;
+	animation: lift 3s ease-in-out 1;
+}
+@keyframes lift {
+	0% {
+		transform: translate(0px, 0px);
+	}
+	20% {
+		transform: translate(0px, -60px);
+	}
+	40% {
+		transform: translate(100px, -60px);
+	}
+	80% {
+		transform: translate(100px, -60px);
+	}
+	100% {
+		transform: translate(0px, 0px);
+	}
+}
+
+.pour{
+	z-index: 301;
+	transform-origin: 50%, 50%;
+	animation: pour 3s ease-in-out 1;
+}
+@keyframes pour {
+	0% {
+		transform: rotate(0deg);
+	}
+	20% {
+		transform: rotate(0deg);
+	}
+	50% {
+		transform: rotate(100deg);
+	}
+	80% {
+		transform: rotate(100deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
+}
+
 
 .chomper{
 	position:absolute;
 	top: 100px;
-	left: 372px;
+	left: 225px;
 	border-radius: 40px;
-	width: 150px;
+	width: 200px;
 	height: 150px;
-	background-color: #FFF;
-/*	animation: spinChomp 1s cubic-bezier(0.5, -0.5, 0.5, 1.5) infinite;
-*/}
+	visibility: "hidden";
+}
 
-/*@keyframes spinChomp {
-	0% {transform: rotate(0);}
-	100% {transform: rotate(720deg); }
-}*/
 
 .spinner{
 	animation: spinner 1s cubic-bezier(0.5, -0.5, 0.5, 1.5) 20;
@@ -99,106 +208,8 @@ html, body {
 	100% {transform: rotate(-720deg);}
 }
 
-.foodA{
-	position:absolute;
-	top: 200px;
-	left: 200px;
-	border-radius: 50%;
-	width: 70px;
-	height: 70px;
-	transform: translate(-50%, -50%);
-	background-color: #87FF9C;
-	z-index: 1;
-	cursor: pointer;
-}
-#letterA{
-	position:relative;
-	text-align: center;
-	top: 18px;
-	-webkit-user-select: none;
-	font-size: 2em;
-}
 
-.foodB{
-	position:absolute;
-	border-radius: 50%;
-	width: 70px;
-	height: 70px;
-	transform: translate(-50%, -50%);
-	background-color: #7D6DFF;
-	z-index: 2;
-	cursor: pointer;
-	-webkit-user-select: none;
-}
-#letterB{
-	position:relative;
-	text-align: center;
-	top: 18px;
-	-webkit-user-select: none;
-	font-size: 2em;
-}
 
-.foodC{
-	position:absolute;
-	border-radius: 50%;
-	width: 70px;
-	height: 70px;
-	transform: translate(-50%, -50%);
-	background-color: #FC68FF;
-	z-index: 3;
-	cursor: pointer;
-}
-#letterC{
-	position:relative;
-	text-align: center;
-	top: 18px;
-	-webkit-user-select: none;
-	font-size: 2em;
-}
-
-#splatterA {
-	position: absolute;
-	top: 300px;
-	left: 365px;
-}
-#splatterB {
-	position: absolute;
-	top: 300px;
-	left: 365px;
-}
-#splatterC {
-	position: absolute;
-	top: 300px;
-	left: 365px;
-}
-
-#splatterMaskA {
-	display: block;
-	width: 175px;
-	height: 125px;
-}
-#splatterMaskB {
-	display: block;
-	width: 175px;
-	height: 125px;
-}
-#splatterMaskC {
-	display: block;
-	width: 175px;
-	height: 125px;
-}
-.splatteringA{
-	background: url('../images/greenSplat.png');
-	animation: splatterMove 1s steps(12) infinite;
-}
-.splatteringB{
-	background: url('../images/purpleSplat.png');
-	animation: splatterMove 1s steps(12) infinite;
-}
-.splatteringC{
-	background: url('../images/pinkSplat.png');
-	animation: splatterMove 1s steps(12) infinite;
-}
 
 @keyframes splatterMove {
 	0%{background-position: 0px;}

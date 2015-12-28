@@ -1,24 +1,35 @@
 var blender = document.getElementById("blender");
+var blend = document.querySelector(".submitbutton");
 var liquid = document.querySelector(".liquid");
 var liquidsvg = document.getElementById("liquidsvg");
 var wave = document.querySelector(".wave");
 
-var splatterA = document.getElementById("splatterA");
-var splatterB = document.getElementById("splatterB");
-var splatterC = document.getElementById("splatterC");
-
 var foodA = document.querySelector(".foodA");
-// var foodAColorShift = "hue-rotate(40deg)"
-var foodAColor = "#87FF9C";
+var foodA_RGB = [40,200,0];
+var foodA_R = foodA_RGB[0];
+var foodA_G = foodA_RGB[1];
+var foodA_B = foodA_RGB[2];
+var foodAColor = "rgb("+foodA_RGB+")";
 var letterA = document.getElementById("letterA");
 
 var foodB = document.querySelector(".foodB");
-var foodBColor = "#7D6DFF"; 
+var foodB_RGB = [120,0,255];
+var foodB_R = foodB_RGB[0];
+var foodB_G = foodB_RGB[1];
+var foodB_B = foodB_RGB[2];
+var foodBColor = "rgb("+foodB_RGB+")";
 var letterB = document.getElementById("letterB");
 
 var foodC = document.querySelector(".foodC");
-var foodCColor = "#FC68FF";
+var foodC_RGB = [250,0,140];
+var foodC_R = foodC_RGB[0];
+var foodC_G = foodC_RGB[1];
+var foodC_B = foodC_RGB[2];
+var foodCColor = "rgb("+foodC_RGB+")";
 var letterC = document.getElementById("letterC");
+
+var rgbCombined = null;
+var addToMix = [];
 
 var chomper = document.querySelector(".chomper");
 
@@ -32,7 +43,6 @@ liquidsvg.style.fill = "#FFFFFF";
 
 star.style.visibility = "hidden";
 donut.style.visibility = "hidden";
-wave.style.visibility = "hidden";
 
 var activeFood = null;
 var activeLetter = null;
@@ -47,7 +57,6 @@ var minVal = 100;
 var maxVal = 600;
 
 blender.addEventListener("animationend", endAnimation, false);
-chomper.addEventListener("animationend", endAnimation, false);
 
 disperse();
 
@@ -60,25 +69,35 @@ function disperse(){
 	foodB.style.left = Math.floor(Math.random() * (maxVal + 1 - minVal) + minVal) +"px";
 }
 
+// function getRGBAverage(event){
+// 	R_average = (foodA_R+foodB_R+foodC_R)/3; 
+// 	G_average =(foodA_G+foodB_G+foodC_G)/3;
+// 	B_average =(foodA_B+foodB_B+foodC_B)/3; 
+// 	console.log("R:"+R_average+", G:"+G_average+", B:"+B_average+",");
+// 	rgbCombined = "rgb("+R_average+","+G_average+","+B_average+")";
+// }
+
+function startBlender(event){
+	console.log(addToMix);
+
+}
+
+blend.onmousedown = startBlender;
+
+function endAnimation(){
+	blender.classList.remove("shake");
+	wave.style.visibility = "hidden";
+	wave.classList.remove("wavemover");
+	blendingFood();
+
+}
+
 function blendingFood(){
-	console.log(activeFood);
 	if (blendedFood !== null){
 		blendedFood.style.top = Math.floor(Math.random() * (maxVal + 1 - minVal) + minVal) +"px";
 		blendedFood.style.left = Math.floor(Math.random() * (maxVal + 1 - minVal) + minVal) +"px";
 		blendedFood.style.visibility = "visible";
 	}
-}
-
-function endAnimation(){
-	// splatterA.classList.remove("splatteringA");
-	// splatterB.classList.remove("splatteringB");
-	// splatterC.classList.remove("splatteringC");
-	blender.classList.remove("shake");
-	chomper.classList.remove("spinner");
-	wave.style.visibility = "hidden";
-	wave.classList.remove("wavemover");
-	blendingFood();
-
 }
 
 function clickFood(event){
@@ -121,41 +140,30 @@ function dropFood(){
 		if (activeFood === foodA){
 			activeFood.style.visibility = "hidden";
 			blender.classList.add("shake");
-			chomper.classList.add("spinner");
-			// splatterA.classList.add("splatteringA");
-			// splatterA.style.filter = foodAColor; 
-			// splatterA.style.WebkitFilter = foodAColor;
 			wave.style.visibility = "visible";
 			wave.classList.add("wavemover");
 			wave.style.fill = foodAColor;
 			liquidsvg.style.fill = foodAColor;
-			// star.style.visibility = "hidden";
-			// donut.style.visibility = "hidden";
 			centerElementAt(activeFood, chomperCenter[0], chomperCenter[1]);
+			addToMix.push("A");
 		} else if (activeFood === foodB){
 			activeFood.style.visibility = "hidden";
 			blender.classList.add("shake");
-			chomper.classList.add("spinner");
-			// splatterB.classList.add("splatteringB");
 			wave.style.visibility = "visible";
 			wave.classList.add("wavemover");
 			wave.style.fill = foodBColor;
 			liquidsvg.style.fill = foodBColor;
-			// star.style.visibility = "visible";
-			// donut.style.visibility = "hidden";
 			centerElementAt(activeFood, chomperCenter[0], chomperCenter[1]);
+			addToMix.push("B");
 		} else {
 			activeFood.style.visibility = "hidden";
 			blender.classList.add("shake");
-			chomper.classList.add("spinner");
-			// splatterC.classList.add("splatteringC");
 			wave.style.visibility = "visible";
 			wave.classList.add("wavemover");
 			wave.style.fill = foodCColor;
 			liquidsvg.style.fill = foodCColor;
-			// star.style.visibility = "hidden";
-			// donut.style.visibility = "visible";
 			centerElementAt(activeFood, chomperCenter[0], chomperCenter[1]);
+			addToMix.push("C");
 		}
 		
 	}
@@ -181,7 +189,6 @@ function getCenter(element){
 function isInsideArea(element, x, y){
 	area = element.getBoundingClientRect();
 	if (x <= area.right && x >= area.left && y <= area.bottom && y >= area.top){
-		console.log("true");
 		return true;
 	}
 	console.log("false");
