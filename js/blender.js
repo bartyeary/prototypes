@@ -34,7 +34,6 @@ var activeLetter = null;
 
 var activeFoodZ = 150;
 var area = null;
-var blendedFood = null;
 
 var blendingElement = null;
 
@@ -70,7 +69,6 @@ function blendIngredients(event){
 	console.log(addToMix);
 	if(combinedColor != "#FFF"){
 		liquidsvg.style.visibility = "visible";
-		blendedFood = activeFood;
 		blender.classList.add("shake");
 		wave.style.visibility = "visible";
 		wave.classList.add("wavemover");
@@ -86,25 +84,21 @@ function blendIngredients(event){
 function endBlend(){
 	blender.classList.remove("shake");
 	wave.style.visibility = "hidden";
-	// liquidsvg.style.visibility = "hidden";
 	wave.classList.remove("wavemover");
+	beginPour();
+}
+
+function beginPour(){
 	pitcherPour.classList.add("pour");
 	pitcherLift.classList.add("lift");
 }
 
 function endPour(){
+	combinedColor = "#FFF";
+	liquidsvg.style.visibility = "hidden";
 	pitcherPour.classList.remove("pour");
 	pitcherLift.classList.remove("lift");
 	disperse();
-}
-
-
-function blendingFood(){
-	if (blendedFood !== null){
-		blendedFood.style.top = Math.floor(Math.random() * (maxVal + 1 - minVal) + minVal) +"px";
-		blendedFood.style.left = Math.floor(Math.random() * (maxVal + 1 - minVal) + minVal) +"px";
-		blendedFood.style.visibility = "visible";
-	}
 }
 
 function clickFood(event){

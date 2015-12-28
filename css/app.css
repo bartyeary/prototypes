@@ -144,7 +144,7 @@ html, body {
 .lift {
 	z-index: 300;
 	transform-origin: 50%, 50%;
-	animation: lift 3s ease-in-out 1;
+	animation: lift 3s ease-in-out 1 alternate;
 }
 @keyframes lift {
 	0% {
@@ -167,7 +167,7 @@ html, body {
 .pour{
 	z-index: 301;
 	transform-origin: 50%, 50%;
-	animation: pour 3s ease-in-out 1;
+	animation: pour 3s ease-in-out 1 alternate;
 }
 @keyframes pour {
 	0% {
