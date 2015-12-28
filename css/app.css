@@ -156,7 +156,7 @@ html, body {
 	40% {
 		transform: translate(100px, -60px);
 	}
-	80% {
+	90% {
 		transform: translate(100px, -60px);
 	}
 	100% {
