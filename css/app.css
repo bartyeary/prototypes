@@ -167,7 +167,7 @@ html, body {
 .pour{
 	z-index: 301;
 	transform-origin: 50%, 50%;
-	animation: pour 3s ease-in-out 1 alternate;
+	animation: pour 3s ease-in-out 1;
 }
 @keyframes pour {
 	0% {

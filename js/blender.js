@@ -42,10 +42,8 @@ var maxValX = 200;
 var minValY = 500;
 var maxValY = 650;
 
-blender.addEventListener("animationend", endBlend, false);
-pitcherPour.addEventListener("animationend", endPour, false);
-
 disperse();
+
 
 function disperse(){
 	apple.style.visibility = "visible";
@@ -57,11 +55,25 @@ function disperse(){
 	strawberry.style.left = Math.floor(Math.random() * (maxValX + 1 - minValX) + minValX) +"px";
 	banana.style.top = Math.floor(Math.random() * (maxValY + 1 - minValY) + minValY) +"px";
 	banana.style.left = Math.floor(Math.random() * (maxValX + 1 - minValX) + minValX) +"px";
+	
 }
 
-function refillFruit(){
-	activeFood.style.top = Math.floor(Math.random() * (maxVal + 1 - minVal) + minVal) +"px";
-	activeFood.style.left = Math.floor(Math.random() * (maxVal + 1 - minVal) + minVal) +"px";
+function beginPour(){
+	pitcherPour.classList.add("pour");
+	pitcherLift.classList.add("lift");
+	pitcherPour.addEventListener("animationend", endPour, false);
+}
+
+function endPour(){
+	combinedColor = "#FFF";
+	appleNum = 0;
+	strawberryNum = 0;
+	bananaNum = 0;
+	liquidsvg.style.visibility = "hidden";
+	pitcherPour.classList.remove("pour");
+	pitcherLift.classList.remove("lift");
+	pitcherPour.removeEventListener("animationend", endPour, false);
+	disperse();
 }
 
 blend.onmousedown = blendIngredients;
@@ -77,34 +89,18 @@ function blendIngredients(event){
 		apple.style.visibility = "hidden";
 		banana.style.visibility = "hidden";
 		strawberry.style.visibility = "hidden";
+		blender.addEventListener("animationend", endBlend, false);
 	}
 }
 
-
 function endBlend(){
+	beginPour();
 	blender.classList.remove("shake");
 	wave.style.visibility = "hidden";
 	wave.classList.remove("wavemover");
-	beginPour();
+	blender.removeEventListener("animationend", endBlend, false);
 }
 
-function beginPour(){
-	pitcherPour.classList.add("pour");
-	pitcherLift.classList.add("lift");
-}
-
-function endPour(){
-	combinedColor = "#FFF";
-	appleNum = 0;
-	strawberryNum = 0;
-	bananaNum = 0;
-	blender.removeEventListener();
-	pitcherPour.removeEventListener();
-	liquidsvg.style.visibility = "hidden";
-	pitcherPour.classList.remove("pour");
-	pitcherLift.classList.remove("lift");
-	disperse();
-}
 
 function clickFood(event){
 	event.preventDefault();
