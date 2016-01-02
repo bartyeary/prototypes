@@ -3,7 +3,10 @@ var pitcherPour = document.getElementById("pitcherPour");
 var pitcherLift = document.getElementById("pitcherLift");
 var blend = document.querySelector(".submitbutton");
 var liquidsvg = document.getElementById("liquidsvg");
-var wave = document.querySelector(".wave");
+var wave = document.getElementById("wave");
+var liquidPath = document.getElementById("liquidPath");
+var liquidFill = document.getElementById("liquidFill");
+var liquidHolder = document.getElementById("liquidHolder");
 
 var apple = document.querySelector(".apple");
 var appleNum = 0;
@@ -59,8 +62,10 @@ function disperse(){
 }
 
 function beginPour(){
-	pitcherPour.classList.add("pour");
 	pitcherLift.classList.add("lift");
+	pitcherPour.classList.add("pour");
+	liquidFill.classList.add("spillRotate");
+	liquidHolder.classList.add("spillDrop");
 	pitcherPour.addEventListener("animationend", endPour, false);
 }
 
@@ -72,6 +77,8 @@ function endPour(){
 	liquidsvg.style.visibility = "hidden";
 	pitcherPour.classList.remove("pour");
 	pitcherLift.classList.remove("lift");
+	liquidFill.classList.remove("spillRotate");
+	liquidHolder.classList.remove("spillDrop");
 	pitcherPour.removeEventListener("animationend", endPour, false);
 	disperse();
 }

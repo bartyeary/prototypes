@@ -88,25 +88,91 @@ html, body {
 	z-index: 199;
 }
 
+#svgPath{
+	position:absolute;
+	width: 160px;
+	height: 210px;
+	top: 16px;
+	left: 31px;
+	z-index: 4;
+}
+
+#liquidHolder{
+	position:absolute;
+	top:155px;
+	left:36px;
+}
+
+#liquidFill{
+	position:absolute;
+	width:350px;
+	height:80px;
+	background-color: #2354D6;
+	/*-webkit-clip-path: url(#svgPath);
+	clip-path: url(#svgPath);*/
+}
+.spillRotate{
+	transform-origin: 0%, 50%;
+	animation: spillRotate 3s ease-in-out 1;
+}
+@keyframes spillRotate {
+	0% {
+		transform: rotate(0deg);
+	}
+	20% {
+		transform: rotate(0deg);
+	}
+	45% {
+		transform: rotate(-80deg);
+	}
+	80% {
+		transform: rotate(-90deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
+}
+.spillDrop{
+	transform-origin: 0%, 50%;
+	animation: spillDrop 3s ease-in-out 1;
+}
+@keyframes spillDrop {
+	0% {
+		transform: translate(0px, 0px);
+	}
+	20% {
+		transform: translate(0px, 0px);
+	}
+	45% {
+		transform: translate(-70px, -40px);
+	}
+	85% {
+		transform: translate(-10px, -40px);
+	}
+	100% {
+		transform: translate(0px, 0px);
+	}
+}
+
 #liquidsvg{
 	position:absolute;
-	width: 100px;
-	height: 100px;
-	top: 140px;
-	left: 60px;
+	width: 107px;
+	height: 108px;
+	top: 136px;
+	left: 57px;
 	z-index: 6;
 }
-.wavemask {
+#wavemask {
 	position:absolute;
-	width: 100px;
-	height: 100px;
-	top: 140px;
-	left: 60px;
+	width: 107px;
+	height: 108px;
+	top: 138px;
+	left: 57px;
 	overflow: hidden;
 	z-index: 5;
 }
 
-.wave {
+#wave {
 	position:absolute;
 	width:240px;
 	height:17px;
@@ -119,13 +185,16 @@ html, body {
 		animation-timing-function: linear;
 		-webkit-animation-iteration-count: infinite;
 		-webkit-animation-timing-function: linear;
-	}
+}
 
-	@keyframes wave
-	{
-		0% {transform: translateX(-100px);}
-		100% {transform: translateX(-50px);}
-	}
+@keyframes wave{
+		0% {
+			transform: translateX(-100px);
+		}
+		100%{
+			transform: translateX(-50px);
+		}
+}
 
 .shake{
 	transform-origin: 50%, 90%;
