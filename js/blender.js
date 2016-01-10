@@ -28,8 +28,7 @@ var square = document.getElementById("insideChomp");
 
 wave.style.fill = "#FFFFFF";
 wave.style.visibility = "hidden";
-liquidsvg.style.fill = "#FFFFFF";
-liquidsvg.style.visibility = "hidden";
+liquidFill.style.visibility = "hidden";
 var combinedColor = "#FFF";
 
 var activeFood = null;
@@ -49,154 +48,154 @@ disperse();
 
 
 function disperse(){
-	apple.style.visibility = "visible";
-	banana.style.visibility = "visible";
-	strawberry.style.visibility = "visible";
-	apple.style.top = Math.floor(Math.random() * (maxValY + 1 - minValY) + minValY) +"px";
-	apple.style.left = Math.floor(Math.random() * (maxValX + 1 - minValX) + minValX) +"px";
-	strawberry.style.top = Math.floor(Math.random() * (maxValY + 1 - minValY) + minValY) +"px";
-	strawberry.style.left = Math.floor(Math.random() * (maxValX + 1 - minValX) + minValX) +"px";
-	banana.style.top = Math.floor(Math.random() * (maxValY + 1 - minValY) + minValY) +"px";
-	banana.style.left = Math.floor(Math.random() * (maxValX + 1 - minValX) + minValX) +"px";
-	
+  apple.style.visibility = "visible";
+  banana.style.visibility = "visible";
+  strawberry.style.visibility = "visible";
+  apple.style.top = Math.floor(Math.random() * (maxValY + 1 - minValY) + minValY) +"px";
+  apple.style.left = Math.floor(Math.random() * (maxValX + 1 - minValX) + minValX) +"px";
+  strawberry.style.top = Math.floor(Math.random() * (maxValY + 1 - minValY) + minValY) +"px";
+  strawberry.style.left = Math.floor(Math.random() * (maxValX + 1 - minValX) + minValX) +"px";
+  banana.style.top = Math.floor(Math.random() * (maxValY + 1 - minValY) + minValY) +"px";
+  banana.style.left = Math.floor(Math.random() * (maxValX + 1 - minValX) + minValX) +"px";
+  
 }
 
 function beginPour(){
-	pitcherLift.classList.add("lift");
-	pitcherPour.classList.add("pour");
-	liquidFill.classList.add("spillRotate");
-	liquidHolder.classList.add("spillDrop");
-	pitcherPour.addEventListener("animationend", endPour, false);
+  pitcherLift.classList.add("lift");
+  pitcherPour.classList.add("pour");
+  liquidFill.classList.add("spillRotate");
+  liquidHolder.classList.add("spillDrop");
+  pitcherPour.addEventListener("animationend", endPour, false);
 }
 
 function endPour(){
-	combinedColor = "#FFF";
-	appleNum = 0;
-	strawberryNum = 0;
-	bananaNum = 0;
-	liquidsvg.style.visibility = "hidden";
-	pitcherPour.classList.remove("pour");
-	pitcherLift.classList.remove("lift");
-	liquidFill.classList.remove("spillRotate");
-	liquidHolder.classList.remove("spillDrop");
-	pitcherPour.removeEventListener("animationend", endPour, false);
-	disperse();
+  combinedColor = "#FFF";
+  appleNum = 0;
+  strawberryNum = 0;
+  bananaNum = 0;
+  liquidFill.style.visibility = "hidden";
+  pitcherPour.classList.remove("pour");
+  pitcherLift.classList.remove("lift");
+  liquidFill.classList.remove("spillRotate");
+  liquidHolder.classList.remove("spillDrop");
+  pitcherPour.removeEventListener("animationend", endPour, false);
+  disperse();
 }
 
 blend.onmousedown = blendIngredients;
 function blendIngredients(event){
-	console.log(addToMix);
-	if(combinedColor != "#FFF"){
-		liquidsvg.style.visibility = "visible";
-		blender.classList.add("shake");
-		wave.style.visibility = "visible";
-		wave.classList.add("wavemover");
-		wave.style.fill = combinedColor;
-		liquidsvg.style.fill = combinedColor;
-		apple.style.visibility = "hidden";
-		banana.style.visibility = "hidden";
-		strawberry.style.visibility = "hidden";
-		blender.addEventListener("animationend", endBlend, false);
-	}
+  console.log(addToMix);
+  if(combinedColor != "#FFF"){
+    liquidFill.style.visibility = "visible";
+    blender.classList.add("shake");
+    wave.style.visibility = "visible";
+    wave.classList.add("wavemover");
+    wave.style.fill = combinedColor;
+    liquidFill.style.backgroundColor = combinedColor;
+    apple.style.visibility = "hidden";
+    banana.style.visibility = "hidden";
+    strawberry.style.visibility = "hidden";
+    blender.addEventListener("animationend", endBlend, false);
+  }
 }
 
 function endBlend(){
-	beginPour();
-	blender.classList.remove("shake");
-	wave.style.visibility = "hidden";
-	wave.classList.remove("wavemover");
-	blender.removeEventListener("animationend", endBlend, false);
+  beginPour();
+  blender.classList.remove("shake");
+  wave.style.visibility = "hidden";
+  wave.classList.remove("wavemover");
+  blender.removeEventListener("animationend", endBlend, false);
 }
 
 
 function clickFood(event){
-	event.preventDefault();
-	activeFoodZ = activeFoodZ +1;
-	activeFood = event.currentTarget;
-	activeLetter = activeFood.dataset.letter;
-	activeFood.style.height = "100px";
-	activeFood.style.width = "100px";
-	activeFood.style.zIndex = "201";
-	
+  event.preventDefault();
+  activeFoodZ = activeFoodZ +1;
+  activeFood = event.currentTarget;
+  activeLetter = activeFood.dataset.letter;
+  activeFood.style.height = "100px";
+  activeFood.style.width = "100px";
+  activeFood.style.zIndex = "201";
+  
 }
 
 function dragFood(event){
-	if (activeFood !== null){
-		activeFood.style.top = event.pageY-20 +"px";
-		activeFood.style.left = event.pageX +"px";
-	} 
+  if (activeFood !== null){
+    activeFood.style.top = event.pageY-20 +"px";
+    activeFood.style.left = event.pageX +"px";
+  } 
 }
 
 function dropFood(){
-	activeFood.style.height = "70px";
-	activeFood.style.width = "70px";
-	activeFood.style.zIndex = activeFoodZ;
-	chomperCenter = getCenter(chomper);
-	liquidCenter = getCenter(liquidsvg);
-	activeCenter = getCenter(activeFood);
-	chomperArea = isInsideArea(chomper, activeCenter[0], activeCenter[1]);
-	if (chomperArea === true){
-		if (activeFood === apple){
-			centerElementAt(activeFood, liquidCenter[0], liquidCenter[1]);
-			addToMix.push("apple");
-			appleNum += 1;
-			getIngredients();
-		} else if (activeFood === banana){
-			centerElementAt(activeFood, liquidCenter[0], liquidCenter[1]-15);
-			addToMix.push("banana");
-			bananaNum += 1;
-			getIngredients();
-		} else {
-			centerElementAt(activeFood, liquidCenter[0], liquidCenter[1]);
-			addToMix.push("strawberry");
-			strawberryNum += 1;
-			getIngredients();
-		}
-		
-	}
-	activeFood = null;
+  activeFood.style.height = "70px";
+  activeFood.style.width = "70px";
+  activeFood.style.zIndex = activeFoodZ;
+  chomperCenter = getCenter(chomper);
+  liquidCenter = getCenter(liquidFill);
+  activeCenter = getCenter(activeFood);
+  chomperArea = isInsideArea(chomper, activeCenter[0], activeCenter[1]);
+  if (chomperArea === true){
+    if (activeFood === apple){
+      centerElementAt(activeFood, liquidCenter[0], liquidCenter[1]);
+      addToMix.push("apple");
+      appleNum += 1;
+      getIngredients();
+    } else if (activeFood === banana){
+      centerElementAt(activeFood, liquidCenter[0], liquidCenter[1]-15);
+      addToMix.push("banana");
+      bananaNum += 1;
+      getIngredients();
+    } else {
+      centerElementAt(activeFood, liquidCenter[0], liquidCenter[1]);
+      addToMix.push("strawberry");
+      strawberryNum += 1;
+      getIngredients();
+    }
+    
+  }
+  activeFood = null;
 
 }
 
 function getIngredients(){
-	if(strawberryNum >= 1 && bananaNum >= 1 && appleNum >= 1){
-		combinedColor = "rgb(255,190,150)";
-	} else if(strawberryNum >= 1  && bananaNum >= 1){
-		combinedColor = "rgb(255,200,210)";
-	} else if(bananaNum >= 1 && appleNum >= 1){
-		combinedColor = "rgb(250,200,190)";
-	} else if(appleNum >= 1 && strawberryNum >= 1){
-		combinedColor = "rgb(255,140,150)";
-	} else if(strawberryNum >= 1){
-		combinedColor = strawberryColor;
-	} else if(bananaNum >= 1){
-		combinedColor = bananaColor;
-	} else if(appleNum >= 1){
-		combinedColor = appleColor;
-	} 
+  if(strawberryNum >= 1 && bananaNum >= 1 && appleNum >= 1){
+    combinedColor = "rgb(255,190,150)";
+  } else if(strawberryNum >= 1  && bananaNum >= 1){
+    combinedColor = "rgb(255,200,210)";
+  } else if(bananaNum >= 1 && appleNum >= 1){
+    combinedColor = "rgb(250,200,190)";
+  } else if(appleNum >= 1 && strawberryNum >= 1){
+    combinedColor = "rgb(255,140,150)";
+  } else if(strawberryNum >= 1){
+    combinedColor = strawberryColor;
+  } else if(bananaNum >= 1){
+    combinedColor = bananaColor;
+  } else if(appleNum >= 1){
+    combinedColor = appleColor;
+  } 
 }
 
 /* This code snaps the food into the mouth if in proximity */
 function centerElementAt(element, x, y){
-	element.style.top = y + "px";
-	element.style.left = x + "px";
+  element.style.top = y + "px";
+  element.style.left = x - 114 + "px";
 }
 
 /* This code finds the center point of the element */
 function getCenter(element){
-	var r = element.getBoundingClientRect();
-	var cx = r.left + r.width /2;
-	var cy = r.top + r.height/2;
-	return [cx, cy];
+  var r = element.getBoundingClientRect();
+  var cx = r.left + r.width /2;
+  var cy = r.top + r.height/2;
+  return [cx, cy];
 }
 
 /* This code finds the dimensions of the element and checks to see if the coordinates are within the area of the element */
 function isInsideArea(element, x, y){
-	area = element.getBoundingClientRect();
-	if (x <= area.right && x >= area.left && y <= area.bottom && y >= area.top){
-		return true;
-	}
-	return false;
+  area = element.getBoundingClientRect();
+  if (x <= area.right && x >= area.left && y <= area.bottom && y >= area.top){
+    return true;
+  }
+  return false;
 }
 
 apple.onmousedown = clickFood;

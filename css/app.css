@@ -64,8 +64,8 @@ html, body {
 	position:absolute;
 	width: 210px;
 	height: 250px;
-	top: -30px;
-	left: 5px;
+	top: -50px;
+	left: -3px;
 	z-index: 205;
 }
 #pitcherLift{
@@ -88,28 +88,31 @@ html, body {
 	z-index: 199;
 }
 
-#svgPath{
-	position:absolute;
-	width: 160px;
-	height: 210px;
-	top: 16px;
-	left: 31px;
-	z-index: 4;
+
+
+#liquidMask{
+  position:absolute;
+  top:8px;
+  left:56px;
+  width: 121px;
+  height: 260px;
+  border-radius: 0 0 35px 35px;
+  overflow: hidden;
+  z-index: 6;
 }
 
 #liquidHolder{
 	position:absolute;
-	top:155px;
-	left:36px;
+   z-index: 8;
 }
 
 #liquidFill{
 	position:absolute;
+  top: 160px;
 	width:350px;
-	height:80px;
+	height:120px;
 	background-color: #2354D6;
-	/*-webkit-clip-path: url(#svgPath);
-	clip-path: url(#svgPath);*/
+  z-index: 7;
 }
 .spillRotate{
 	transform-origin: 0%, 50%;
@@ -119,17 +122,17 @@ html, body {
 	0% {
 		transform: rotate(0deg);
 	}
-	20% {
+	18% {
 		transform: rotate(0deg);
 	}
-	45% {
-		transform: rotate(-80deg);
+	44% {
+		transform: rotate(-70deg);
 	}
-	80% {
-		transform: rotate(-90deg);
+	60% {
+		transform: rotate(-85deg);
 	}
 	100% {
-		transform: rotate(0deg);
+		transform: rotate(-85deg);
 	}
 }
 .spillDrop{
@@ -140,34 +143,27 @@ html, body {
 	0% {
 		transform: translate(0px, 0px);
 	}
-	20% {
-		transform: translate(0px, 0px);
+  18% {
+    transform: translate(0px, 0px);
+  }
+	38% {
+		transform: translate(-70px, -50px);
 	}
-	45% {
-		transform: translate(-70px, -40px);
-	}
-	85% {
-		transform: translate(-10px, -40px);
+	80% {
+		transform: translate(100px, -50px);
 	}
 	100% {
-		transform: translate(0px, 0px);
+		transform: translate(140px, -40px);
 	}
 }
 
-#liquidsvg{
-	position:absolute;
-	width: 107px;
-	height: 108px;
-	top: 136px;
-	left: 57px;
-	z-index: 6;
-}
+
 #wavemask {
 	position:absolute;
-	width: 107px;
+	width: 121px;
 	height: 108px;
-	top: 138px;
-	left: 57px;
+	top: 152px;
+	left: 56px;
 	overflow: hidden;
 	z-index: 5;
 }
@@ -223,10 +219,10 @@ html, body {
 		transform: translate(0px, -60px);
 	}
 	40% {
-		transform: translate(100px, -60px);
+		transform: translate(90px, -60px);
 	}
 	90% {
-		transform: translate(100px, -60px);
+		transform: translate(90px, -60px);
 	}
 	100% {
 		transform: translate(0px, 0px);
