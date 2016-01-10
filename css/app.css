@@ -50,13 +50,13 @@ html, body {
 	position:absolute;
 	top: 10px;
 	left: 10px;
-	z-index: 1000px;
+	z-index: 111px;
 }
 
 #blenderButton{
 	position:absolute;
 	top:270px;
-	left:36px;
+	left:38px;
 	text-decoration: none;
 	z-index: 202;
 }
@@ -70,6 +70,7 @@ html, body {
 }
 #pitcherLift{
 	position:absolute;
+  z-index: 206;
 }
 #blenderBottom{
 	position:absolute;
@@ -77,19 +78,16 @@ html, body {
 	height: 250px;
 	top: 200px;
 	left: 10px;
-	z-index: 200;
+	z-index: 198;
 }
 #blender{
 	position:absolute;
 	top: 210px;
-	left: 210px;
+	left: 200px;
 	width: 250px;
 	height: 600px;
 	z-index: 199;
 }
-
-
-
 #liquidMask{
   position:absolute;
   top:8px;
@@ -103,16 +101,16 @@ html, body {
 
 #liquidHolder{
 	position:absolute;
-   z-index: 8;
+   z-index: 7;
 }
 
 #liquidFill{
 	position:absolute;
-  top: 160px;
+  top: 162px;
 	width:350px;
 	height:120px;
 	background-color: #2354D6;
-  z-index: 7;
+  z-index: 8;
 }
 .spillRotate{
 	transform-origin: 0%, 50%;
@@ -122,17 +120,17 @@ html, body {
 	0% {
 		transform: rotate(0deg);
 	}
-	18% {
+	20% {
 		transform: rotate(0deg);
 	}
-	44% {
-		transform: rotate(-70deg);
+	43% {
+		transform: rotate(-78deg);
 	}
-	60% {
-		transform: rotate(-85deg);
+	55% {
+		transform: rotate(-88deg);
 	}
 	100% {
-		transform: rotate(-85deg);
+		transform: rotate(-90deg);
 	}
 }
 .spillDrop{
@@ -141,28 +139,67 @@ html, body {
 }
 @keyframes spillDrop {
 	0% {
-		transform: translate(0px, 0px);
+		transform: translate(0px, -9px);
 	}
-  18% {
-    transform: translate(0px, 0px);
+  15% {
+    transform: translate(0px, -9px);
   }
-	38% {
-		transform: translate(-70px, -50px);
+	40% {
+		transform: translate(-24px, -43px);
 	}
-	80% {
-		transform: translate(100px, -50px);
+	94% {
+		transform: translate(20px, -43px);
 	}
 	100% {
-		transform: translate(140px, -40px);
+		transform: translate(140px, -43px);
 	}
 }
 
+#streamHolder{
+  position:absolute;
+  top: 305px;
+  left: 489px;
+  height: 200px;
+  width: 10px;
+  border-radius: 0 5px 5px 5px;
+}
+
+#stream{
+  position:absolute;
+  width: 0px;
+  height: 0px;
+  border-radius: 5px;
+}
+
+.flow{
+  transform-origin: 30% 100%;
+  animation: flow 1.3s ease-in;
+  -webkit-animation: flow 1.5s ease-in 1.25s;
+}
+
+@keyframes flow{
+  10%{
+    height: 5px;
+    width: 5px;
+    transform: translateY(0px);
+  }
+  60%{
+    height: 200px;
+    width: 8px;
+    transform: translateY(10px);
+  }
+  100%{
+    width: 5px;
+    transform: translateY(200px);
+  }
+
+}
 
 #wavemask {
 	position:absolute;
 	width: 121px;
 	height: 108px;
-	top: 152px;
+	top: 154px;
 	left: 56px;
 	overflow: hidden;
 	z-index: 5;
@@ -207,7 +244,7 @@ html, body {
 }
 
 .lift {
-	z-index: 300;
+	z-index: 400;
 	transform-origin: 50%, 50%;
 	animation: lift 3s ease-in-out 1;
 }
@@ -230,7 +267,7 @@ html, body {
 }
 
 .pour{
-	z-index: 301;
+	z-index: 401;
 	transform-origin: 50%, 50%;
 	animation: pour 3s ease-in-out 1;
 }
@@ -244,8 +281,8 @@ html, body {
 	50% {
 		transform: rotate(100deg);
 	}
-	80% {
-		transform: rotate(100deg);
+	87% {
+		transform: rotate(104deg);
 	}
 	100% {
 		transform: rotate(0deg);

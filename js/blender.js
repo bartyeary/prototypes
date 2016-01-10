@@ -7,6 +7,7 @@ var wave = document.getElementById("wave");
 var liquidPath = document.getElementById("liquidPath");
 var liquidFill = document.getElementById("liquidFill");
 var liquidHolder = document.getElementById("liquidHolder");
+var stream = document.getElementById("stream");
 
 var apple = document.querySelector(".apple");
 var appleNum = 0;
@@ -65,6 +66,8 @@ function beginPour(){
   pitcherPour.classList.add("pour");
   liquidFill.classList.add("spillRotate");
   liquidHolder.classList.add("spillDrop");
+  stream.classList.add("flow");
+  stream.style.visibility = "visible";
   pitcherPour.addEventListener("animationend", endPour, false);
 }
 
@@ -78,6 +81,8 @@ function endPour(){
   pitcherLift.classList.remove("lift");
   liquidFill.classList.remove("spillRotate");
   liquidHolder.classList.remove("spillDrop");
+  stream.classList.remove("flow");
+  stream.style.visibility = "hidden";
   pitcherPour.removeEventListener("animationend", endPour, false);
   disperse();
 }
@@ -92,6 +97,7 @@ function blendIngredients(event){
     wave.classList.add("wavemover");
     wave.style.fill = combinedColor;
     liquidFill.style.backgroundColor = combinedColor;
+    stream.style.backgroundColor = combinedColor;
     apple.style.visibility = "hidden";
     banana.style.visibility = "hidden";
     strawberry.style.visibility = "hidden";
