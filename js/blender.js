@@ -1,3 +1,4 @@
+
 var blender = document.getElementById("blender");
 var pitcherPour = document.getElementById("pitcherPour");
 var pitcherLift = document.getElementById("pitcherLift");
@@ -44,6 +45,8 @@ var minValX = 10;
 var maxValX = 200;
 var minValY = 500;
 var maxValY = 650;
+
+
 
 disperse();
 
@@ -183,7 +186,7 @@ function getIngredients(){
 
 /* This code snaps the food into the mouth if in proximity */
 function centerElementAt(element, x, y){
-  element.style.top = y + "px";
+  element.style.top = y - 30 + "px";
   element.style.left = x - 114 + "px";
 }
 

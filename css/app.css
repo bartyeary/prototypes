@@ -5,6 +5,78 @@ html, body {
 	height: 100%;
 	overflow: auto; /* Prevent margin collapsing on top element */
 }
+#tigerPos {
+  position:absolute;
+  left: -3px;
+  top: 53px;
+  -webkit-transform: scale(.8);
+}
+#monkeyPos {
+  position:absolute;
+  left: -16px;
+  top: 1px;
+  -webkit-transform: scale(.8);
+}
+
+#cardPos1 {
+  position:absolute;
+  top:200px;
+  left:500px;
+}
+#cardPos2 {
+  position:absolute;
+  top:200px;
+  left:590px;
+}
+
+/* entire container, keeps perspective */
+.flip-container {
+  position:absolute;
+  -webkit-perspective: 800;
+}
+  /* flip the pane when hovered */
+.flip-container:hover .flipper, .flip-container.hover .flipper {
+    transform: rotateY(180deg);
+  }
+
+.flip-container, .frontface, .backface {
+  width: 72px;
+  height: 90px;
+}
+
+/* flip speed goes here */
+.flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+/* hide back of pane during swap */
+.frontface, .backface {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* front pane, placed above back */
+.frontface {
+  z-index: 2;
+  background-color: #FFF;
+  border-radius: 7px;
+  box-shadow: 0 2px 10px #D9D9D9;
+  /* for firefox 31 */
+  transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.backface {
+  background-color: #6CB6FF;
+  border-radius: 7px;
+  box-shadow: 0 2px 10px #D9D9D9;
+  transform: rotateY(180deg);
+}
+
 .strawberry{
 	position:absolute;
 	top: 200px;
@@ -78,22 +150,22 @@ html, body {
 	height: 250px;
 	top: 200px;
 	left: 10px;
-	z-index: 198;
+	z-index: 1;
 }
 #blender{
 	position:absolute;
 	top: 210px;
 	left: 200px;
 	width: 250px;
-	height: 600px;
+	height: 400px;
 	z-index: 199;
 }
 #liquidMask{
   position:absolute;
-  top:8px;
+  top:32px;
   left:56px;
-  width: 121px;
-  height: 260px;
+  width: 122px;
+  height: 233px;
   border-radius: 0 0 35px 35px;
   overflow: hidden;
   z-index: 6;
@@ -109,6 +181,7 @@ html, body {
   top: 162px;
 	width:350px;
 	height:120px;
+
 	background-color: #2354D6;
   z-index: 8;
 }
@@ -124,6 +197,7 @@ html, body {
 		transform: rotate(0deg);
 	}
 	43% {
+    border-radius: 5px;
 		transform: rotate(-78deg);
 	}
 	55% {
@@ -157,8 +231,8 @@ html, body {
 
 #streamHolder{
   position:absolute;
-  top: 305px;
-  left: 489px;
+  top: 302px;
+  left: 465px;
   height: 200px;
   width: 10px;
   border-radius: 0 5px 5px 5px;
@@ -168,19 +242,19 @@ html, body {
   position:absolute;
   width: 0px;
   height: 0px;
-  border-radius: 5px;
+  border-radius: 4px;
 }
 
 .flow{
   transform-origin: 30% 100%;
   animation: flow 1.3s ease-in;
-  -webkit-animation: flow 1.5s ease-in 1.25s;
+  -webkit-animation: flow 1.2s ease-in 1.28s;
 }
 
 @keyframes flow{
-  10%{
-    height: 5px;
-    width: 5px;
+  0%{
+    height: 8px;
+    width: 8px;
     transform: translateY(0px);
   }
   60%{
@@ -197,17 +271,17 @@ html, body {
 
 #wavemask {
 	position:absolute;
-	width: 121px;
-	height: 108px;
-	top: 154px;
+	top: 177px;
 	left: 56px;
+  width: 122px;
+  height: 108px;
 	overflow: hidden;
 	z-index: 5;
 }
 
 #wave {
 	position:absolute;
-	width:240px;
+	width:242px;
 	height:17px;
 }
 
@@ -296,7 +370,7 @@ html, body {
 	left: 225px;
 	border-radius: 40px;
 	width: 200px;
-	height: 150px;
+	height: 200px;
 	visibility: "hidden";
 }
 
