@@ -3,15 +3,17 @@
 <html lang="en">
 		
 	<head>
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+
 		<meta charset="utf-8">
 
-    	<title>Togetheroo</title>
+  	<title>Togetheroo</title>
 
-    	<link rel="stylesheet" type="text/css" href="css/animation.css">
-    	<link rel="stylesheet" type="text/css" href="css/style.css">
-    	<link rel="stylesheet" type="text/css" href="css/app.css">
+  	<link rel="stylesheet" type="text/css" href="css/animation.css">
+  	<link rel="stylesheet" type="text/css" href="css/style.css">
+  	<link rel="stylesheet" type="text/css" href="css/app.css">
 
-    	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
     
 	</head>
 
@@ -63,6 +65,8 @@
 	   			</div>
 					<img id="blenderBottom" class="no-select" src="images/blenderBottom.svg">
 			</div>
+      <div id="coinspin">
+      </div>
       <div id="cardPos1">
           <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
             <div class="flipper">
@@ -229,6 +233,9 @@
 		
 		<footer id="footer"></footer>
 		<script language="javascript" type="text/javascript" src="js/blender.js"></script>
+    <script>
+    var myDataRef = new Firebase('https://fv88cfe2zjm.firebaseio-demo.com/');
+    </script>
 	</body>
 </html>
 

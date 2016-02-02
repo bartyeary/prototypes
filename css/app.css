@@ -5,6 +5,22 @@ html, body {
 	height: 100%;
 	overflow: auto; /* Prevent margin collapsing on top element */
 }
+#coinspin {
+  position:absolute;
+  left: 500px;
+  top: 300px;
+  width: 100px;
+  height: 100px;
+  display: block;
+  background-image: url("../images/coin.png");
+  animation: coinspin .4s steps(6) infinite;
+}
+@keyframes coinspin {
+ 100% {
+   background-position: -600px;
+ }
+}
+
 #tigerPos {
   position:absolute;
   left: -3px;
@@ -21,12 +37,12 @@ html, body {
 #cardPos1 {
   position:absolute;
   top:200px;
-  left:500px;
+  left:400px;
 }
 #cardPos2 {
   position:absolute;
   top:200px;
-  left:590px;
+  left:490px;
 }
 
 /* entire container, keeps perspective */
