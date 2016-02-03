@@ -9,6 +9,7 @@ var liquidPath = document.getElementById("liquidPath");
 var liquidFill = document.getElementById("liquidFill");
 var liquidHolder = document.getElementById("liquidHolder");
 var stream = document.getElementById("stream");
+var droparrow = document.getElementById("droparrow");
 
 var apple = document.querySelector(".apple");
 var appleNum = 0;
@@ -75,6 +76,7 @@ function beginPour(){
 }
 
 function endPour(){
+  droparrow.style.visibility = "visible"
   combinedColor = "#FFF";
   appleNum = 0;
   strawberryNum = 0;
@@ -94,6 +96,7 @@ blend.onmousedown = blendIngredients;
 function blendIngredients(event){
   console.log(addToMix);
   if(combinedColor != "#FFF"){
+    droparrow.style.visibility = "hidden";
     liquidFill.style.visibility = "visible";
     blender.classList.add("shake");
     wave.style.visibility = "visible";

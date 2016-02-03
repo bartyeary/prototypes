@@ -21,6 +21,22 @@ html, body {
  }
 }
 
+#droparrow {
+  position:relative;
+  top: 50px;
+  left:83px;
+  width: 40px;
+  height: 65px;
+  display: block;
+  background-image: url("../images/droparrow.png");
+  animation: droparrow .4s steps(11) infinite;
+}
+@keyframes droparrow {
+ 100% {
+   background-position: 440px;
+ }
+}
+
 #tigerPos {
   position:absolute;
   left: -3px;
@@ -37,12 +53,12 @@ html, body {
 #cardPos1 {
   position:absolute;
   top:200px;
-  left:560px;
+  left:540px;
 }
 #cardPos2 {
   position:absolute;
   top:200px;
-  left:470px;
+  left:450px;
 }
 
 /* entire container, keeps perspective */
@@ -227,6 +243,41 @@ html, body {
 	height: 400px;
 	z-index: 199;
 }
+
+#wavemask {
+	position:absolute;
+	top: 150px;
+	left: 47px;
+  width: 106px;
+  height: 108px;
+	overflow: hidden;
+	z-index: 5;
+}
+
+#wave {
+	position:absolute;
+	width:242px;
+	height:17px;
+}
+
+.wavemover {
+	animation: wave .5s;
+		-webkit-animation: wave .5s; /* Safari and Chrome */
+		animation-iteration-count: 10;
+		animation-timing-function: linear;
+		-webkit-animation-iteration-count: infinite;
+		-webkit-animation-timing-function: linear;
+}
+
+@keyframes wave{
+		0% {
+			transform: translateX(-100px);
+		}
+		100%{
+			transform: translateX(-50px);
+		}
+}
+
 #liquidMask{
   position:absolute;
   top:37px;
@@ -239,61 +290,62 @@ html, body {
 }
 
 #liquidHolder{
-	position:absolute;
+  position:absolute;
    z-index: 7;
 }
 
-#liquidFill{
-	position:absolute;
-  top: 130px;
-	width:300px;
-	height:120px;
 
-	background-color: #2354D6;
+#liquidFill{
+  position:absolute;
+  top: 130px;
+  width:300px;
+  height:120px;
+
+  background-color: #2354D6;
   z-index: 8;
 }
 .spillRotate{
-	transform-origin: 0%, 50%;
-	animation: spillRotate 3s ease-in-out 1;
+  transform-origin: 0%, 50%;
+  animation: spillRotate 3s ease-in-out 1;
 }
 @keyframes spillRotate {
-	0% {
-		transform: rotate(0deg);
-	}
-	20% {
-		transform: rotate(0deg);
-	}
-	43% {
+  0% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(0deg);
+  }
+  43% {
     border-radius: 5px;
-		transform: rotate(-78deg);
-	}
-	55% {
-		transform: rotate(-88deg);
-	}
-	100% {
-		transform: rotate(-90deg);
-	}
+    transform: rotate(-78deg);
+  }
+  55% {
+    transform: rotate(-88deg);
+  }
+  100% {
+    transform: rotate(-90deg);
+  }
 }
 .spillDrop{
-	transform-origin: 0%, 50%;
-	animation: spillDrop 3s ease-in-out 1;
+  transform-origin: 0%, 50%;
+  animation: spillDrop 3s ease-in-out 1;
 }
 @keyframes spillDrop {
-	0% {
-		transform: translate(0px, 0px);
-	}
+  0% {
+    transform: translate(0px, 0px);
+  }
   15% {
     transform: translate(0px, -9px);
   }
-	40% {
-		transform: translate(-24px, -43px);
-	}
-	94% {
-		transform: translate(20px, -43px);
-	}
-	100% {
-		transform: translate(140px, -43px);
-	}
+  40% {
+    transform: translate(-24px, -43px);
+  }
+  94% {
+    transform: translate(20px, -43px);
+  }
+  100% {
+    transform: translate(140px, -43px);
+  }
 }
 
 #streamHolder{
@@ -336,39 +388,6 @@ html, body {
 
 }
 
-#wavemask {
-	position:absolute;
-	top: 150px;
-	left: 47px;
-  width: 106px;
-  height: 108px;
-	overflow: hidden;
-	z-index: 5;
-}
-
-#wave {
-	position:absolute;
-	width:242px;
-	height:17px;
-}
-
-.wavemover {
-	animation: wave .5s;
-		-webkit-animation: wave .5s; /* Safari and Chrome */
-		animation-iteration-count: 10;
-		animation-timing-function: linear;
-		-webkit-animation-iteration-count: infinite;
-		-webkit-animation-timing-function: linear;
-}
-
-@keyframes wave{
-		0% {
-			transform: translateX(-100px);
-		}
-		100%{
-			transform: translateX(-50px);
-		}
-}
 
 .shake{
 	transform-origin: 50%, 90%;
@@ -438,7 +457,7 @@ html, body {
 	border-radius: 40px;
 	width: 200px;
 	height: 200px;
-	/*visibility: "hidden";*/
+	visibility: "hidden";
   /*border: 2px dotted #FFF;*/
 }
 
