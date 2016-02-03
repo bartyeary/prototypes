@@ -36,7 +36,7 @@ var combinedColor = "#FFF";
 var activeFood = null;
 var activeLetter = null;
 
-var activeFoodZ = 150;
+var activeFoodZ = 100;
 var area = null;
 
 var blendingElement = null;
@@ -145,17 +145,17 @@ function dropFood(){
   chomperArea = isInsideArea(chomper, activeCenter[0], activeCenter[1]);
   if (chomperArea === true){
     if (activeFood === apple){
-      centerElementAt(activeFood, liquidCenter[0], liquidCenter[1]);
+      centerElementAt(activeFood, liquidCenter[0]+18, liquidCenter[1]-2);
       addToMix.push("apple");
       appleNum += 1;
       getIngredients();
     } else if (activeFood === banana){
-      centerElementAt(activeFood, liquidCenter[0], liquidCenter[1]-15);
+      centerElementAt(activeFood, liquidCenter[0]+20, liquidCenter[1]-20);
       addToMix.push("banana");
       bananaNum += 1;
       getIngredients();
     } else {
-      centerElementAt(activeFood, liquidCenter[0], liquidCenter[1]);
+      centerElementAt(activeFood, liquidCenter[0]+18, liquidCenter[1]+2);
       addToMix.push("strawberry");
       strawberryNum += 1;
       getIngredients();

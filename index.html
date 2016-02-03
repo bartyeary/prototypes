@@ -13,38 +13,44 @@
   	<link rel="stylesheet" type="text/css" href="css/style.css">
   	<link rel="stylesheet" type="text/css" href="css/app.css">
 
-  	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     
-	</head>
+  </head>
 
-	<body class="clearfix">
-		<div class="no-select">
-			<div class="strawberry" class="no-select" data-letter="S">
-				<img id="strawberry" class="no-select" src="images/strawberry.svg">
-				</div>
-			</div>
-			<div class="banana" class="no-select" data-letter="B">
-				<img id="banana" class="no-select" src="images/banana.svg">
-				</div>
-			</div>
+  <body class="clearfix">
+    <div id="canvasHolder">
 
-			<div class="apple" class="no-select" data-letter="A">
-				<img id="apple" class="no-select" src="images/apple.svg">
-				</div>
-			</div>
+      <div class="strawberry" class="no-select" data-letter="S">
+        <img id="strawberry" class="no-select" src="images/strawberry.svg">
+        </div>
+      </div>
 
-			<div class="chomper" class="no-select">	
-			</div>
+      <div class="banana" class="no-select" data-letter="B">
+        <img id="banana" class="no-select" src="images/banana.svg">
+        </div>
+      </div>
 
-			<div id="streamHolder">
+      <div class="apple" class="no-select" data-letter="A">
+        <img id="apple" class="no-select" src="images/apple.svg">
+        </div>
+      </div>
+
+      <div class="chomper" class="no-select"> 
+      </div>
+
+      <div id="streamHolder">
         <div id="stream">
         </div>
       </div>
 
-			<div id="blender" class="no-select">
-				<div id="pitcherLift">
-		   			<div id="pitcherPour">
-    					<img class="no-select" src="images/blenderTop.svg">
+      <div id="blender" class="no-select">
+
+        <div id="pitcherLift">
+
+            <div id="pitcherPour">
+
+              <img class="no-select" src="images/blenderTop.svg">
+
               <div id="wavemask">
                   <svg version="1.1" id="wave" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="2 0 200 17" style="enable-background:new 2 0 200 17;" xml:space="preserve">
                     <g id="all-elements">
@@ -52,25 +58,33 @@
                     </g>
                   </svg>
               </div>
-    							
+                  
               <div id="liquidMask">
-      						<div id="liquidHolder">
-      							<div id="liquidFill"></div>
-      						</div>
+                  <div id="liquidHolder">
+                    <div id="liquidFill"></div>
+                  </div>
               </div>
-					</div>
-				</div>
-	   			<div id="blenderButton" class="no-select">
-	   				<input type="submit" class="submitbutton" class="no-select" value="BLEND">
-	   			</div>
-					<img id="blenderBottom" class="no-select" src="images/blenderBottom.svg">
-			</div>
+
+            </div>
+
+        </div>
+
+        <div id="blenderButton" class="no-select">
+          <input type="submit" class="submitbutton" class="no-select" value="BLEND">
+        </div>
+        <img id="blenderBottom" class="no-select" src="images/blenderBottom.svg">
+      </div>
       <div id="coinspin">
       </div>
+
       <div id="cardPos1">
+
           <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+            
             <div class="flipper">
+
               <div class="frontface">
+
                 <div id="tigerPos">
                   <div id="tigerhead" class="no-select">
                       <div id="tigerheadbkgrd">
@@ -91,33 +105,44 @@
                       <div id="tigersmile">
                         <img src="images/character/tiger_smile.svg">
                       </div>
-                  </div>
+                  </div>    
                 </div>
-              </div>
-            <div class="backface">
-              <div class="ingredient1">
-                <img class="cardStrawberry" class="no-select" src="images/strawberry.svg">
-                <p class="quantityWhite">x 2</p>
-              </div>
-              
-              <div class="ingredient2">
-                <img class="cardApple" class="no-select" src="images/apple.svg">
-                <p class="quantityWhite">x 3</p>
+
               </div>
 
-              <div class="ingredient3">
-                <img class="cardBanana" class="no-select" src="images/banana.svg">
-                <p class="quantityWhite">x 1</p>
+              <div class="backface">
+
+                <div class="ingredient1">
+                  <img class="cardStrawberry" class="no-select" src="images/strawberry.svg">
+                  <p class="quantityWhite">x 2</p>
+                </div>
+                
+                <div class="ingredient2">
+                  <img class="cardApple" class="no-select" src="images/apple.svg">
+                  <p class="quantityWhite">x 3</p>
+                </div>
+
+                <div class="ingredient3">
+                  <img class="cardBanana" class="no-select" src="images/banana.svg">
+                  <p class="quantityWhite">x 1</p>
+                </div>
+
               </div>
 
             </div>
+
           </div>
-        </div>
+
       </div>
+
       <div id="cardPos2">
+
         <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+
           <div class="flipper">
+
             <div class="frontface">
+
               <div id="monkeyPos">
                 <div id="monkeyhead">
                   <div>
@@ -137,19 +162,28 @@
                   </div>
                 </div>
               </div>
+
             </div>
+
             <div class="backface">
               <img id="banana" class="no-select" src="images/banana.svg">
             </div>
+
           </div>
+
+        </div>
+
+      </div>
+
+        <div class="canvas">
         </div>
       </div>
-		<header id="nav">
-			<div>
-			<img id="logo" src="images/togetheroologo.svg" width="246px" height="50px" title="logo"/>
-			</div>
-			<div id="navigation_wrap">
-			<div id="navigation">
+    <header id="nav">
+      <div>
+      <img id="logo" src="images/togetheroologo.svg" width="246px" height="50px" title="logo"/>
+      </div>
+      <div id="navigation_wrap">
+      <div id="navigation">
 				<div id="urlfield">
 					<div id="urltext">
 						<p>togetheroo.com/myplayspace1</p>

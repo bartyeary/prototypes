@@ -37,12 +37,12 @@ html, body {
 #cardPos1 {
   position:absolute;
   top:200px;
-  left:400px;
+  left:560px;
 }
 #cardPos2 {
   position:absolute;
   top:200px;
-  left:490px;
+  left:470px;
 }
 
 /* entire container, keeps perspective */
@@ -123,24 +123,25 @@ html, body {
 }
 .cardStrawberry{
   position:absolute;
-  top: 1px;
-  left: 4px;
-  width: 25px;
-  height: 25px;
+  top: 3px;
+  left: 6px;
+  width: 22px;
+  height: 22px;
 }
 .cardBanana{
   position:absolute;
   top: -6px;
-  left: -4px;
-  width: 35px;
-  height: 35px;
+  left: 0px;
+  width: 32px;
+  height: 32px;
+  transform: rotate(20deg);
 }
 .cardApple{
   position:absolute;
-  top: -1px;
-  left: 3px;
-  width: 25px;
-  height: 25px;
+  top: 2px;
+  left: 5px;
+  width: 22px;
+  height: 22px;
 }
 
 .strawberry{
@@ -193,45 +194,45 @@ html, body {
 
 #blenderButton{
 	position:absolute;
-	top:270px;
-	left:38px;
+	top:257px;
+	left:33px;
 	text-decoration: none;
 	z-index: 202;
 }
 #pitcherPour{
 	position:absolute;
-	width: 210px;
-	height: 250px;
-	top: -50px;
-	left: -3px;
-	z-index: 205;
+	width: 180px;
+	height: 230px;
+	top: -8px;
+	left: 10px;
+	z-index: 501;
 }
 #pitcherLift{
 	position:absolute;
-  z-index: 206;
+  z-index: 500;
 }
 #blenderBottom{
-	position:absolute;
-	width: 210px;
-	height: 250px;
+	position:relative;
+	width: 200px;
+	height: 220px;
 	top: 200px;
-	left: 10px;
-	z-index: 1;
+	left: 11px;
+	z-index: 200;
 }
 #blender{
-	position:absolute;
-	top: 210px;
-	left: 200px;
+	position:relative;
+	top: 0px;
+	left: 215px;
 	width: 250px;
 	height: 400px;
 	z-index: 199;
 }
 #liquidMask{
   position:absolute;
-  top:32px;
-  left:56px;
-  width: 122px;
-  height: 233px;
+  top:37px;
+  left:47px;
+  width: 106px;
+  height: 190px;
   border-radius: 0 0 35px 35px;
   overflow: hidden;
   z-index: 6;
@@ -244,8 +245,8 @@ html, body {
 
 #liquidFill{
 	position:absolute;
-  top: 162px;
-	width:350px;
+  top: 130px;
+	width:300px;
 	height:120px;
 
 	background-color: #2354D6;
@@ -279,7 +280,7 @@ html, body {
 }
 @keyframes spillDrop {
 	0% {
-		transform: translate(0px, -9px);
+		transform: translate(0px, 0px);
 	}
   15% {
     transform: translate(0px, -9px);
@@ -337,9 +338,9 @@ html, body {
 
 #wavemask {
 	position:absolute;
-	top: 177px;
-	left: 56px;
-  width: 122px;
+	top: 150px;
+	left: 47px;
+  width: 106px;
   height: 108px;
 	overflow: hidden;
 	z-index: 5;
@@ -431,13 +432,14 @@ html, body {
 
 
 .chomper{
-	position:absolute;
+	position:relative;
 	top: 100px;
-	left: 225px;
+	left: 220px;
 	border-radius: 40px;
 	width: 200px;
 	height: 200px;
-	visibility: "hidden";
+	/*visibility: "hidden";*/
+  /*border: 2px dotted #FFF;*/
 }
 
 
@@ -450,11 +452,23 @@ html, body {
 	100% {transform: rotate(-720deg);}
 }
 
-
-
-
 @keyframes splatterMove {
 	0%{background-position: 0px;}
 	100%{background-position: 2100px;}
 }
 
+#canvasHolder{
+  position:relative;
+}
+.canvas {
+  position:absolute;
+  width: 860px;
+  height: 650px;
+  top: 58px;
+  left: 50%;
+  transform: translate(-50%);
+  background-color: #B9DCFF;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px #D9D9D9;
+  z-index: -5;
+}
