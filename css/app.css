@@ -244,9 +244,14 @@ html, body {
 	z-index: 199;
 }
 
+#blenderTop{
+  position:relative;
+  z-index: 120;
+}
+
 #wavemask {
 	position:absolute;
-	top: 150px;
+	top: 143px;
 	left: 47px;
   width: 106px;
   height: 108px;
@@ -280,10 +285,10 @@ html, body {
 
 #liquidMask{
   position:absolute;
-  top:37px;
+  top:30px;
   left:47px;
   width: 106px;
-  height: 190px;
+  height: 197px;
   border-radius: 0 0 35px 35px;
   overflow: hidden;
   z-index: 6;
@@ -300,8 +305,6 @@ html, body {
   top: 130px;
   width:300px;
   height:120px;
-
-  background-color: #2354D6;
   z-index: 8;
 }
 .spillRotate{
@@ -315,11 +318,11 @@ html, body {
   20% {
     transform: rotate(0deg);
   }
-  43% {
+  46% {
     border-radius: 5px;
-    transform: rotate(-78deg);
+    transform: rotate(-80deg);
   }
-  55% {
+  58% {
     transform: rotate(-88deg);
   }
   100% {
@@ -334,24 +337,24 @@ html, body {
   0% {
     transform: translate(0px, 0px);
   }
-  15% {
-    transform: translate(0px, -9px);
+  17% {
+    transform: translate(0px, -8px);
   }
-  40% {
-    transform: translate(-24px, -43px);
+  35% {
+    transform: translate(-20px, -40px);
   }
   94% {
-    transform: translate(20px, -43px);
+    transform: translate(20px, -40px);
   }
   100% {
-    transform: translate(140px, -43px);
+    transform: translate(140px, -40px);
   }
 }
 
 #streamHolder{
   position:absolute;
-  top: 302px;
-  left: 465px;
+  top: 312px;
+  left: 468px;
   height: 200px;
   width: 10px;
   border-radius: 0 5px 5px 5px;
