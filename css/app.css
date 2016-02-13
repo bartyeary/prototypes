@@ -5,6 +5,22 @@ html, body {
 	height: 100%;
 	overflow: auto; /* Prevent margin collapsing on top element */
 }
+#loader {
+  position:absolute;
+  left: 120px;
+  top: 56px;
+  width: 60px;
+  height: 40px;
+  display: block;
+  background-image: url("../images/load.png");
+  animation: loader .6s steps(25) infinite;
+}
+@keyframes loader {
+ 100% {
+   background-position: -1500px;
+ }
+}
+
 #coinspin {
   position:absolute;
   left: 500px;
@@ -239,8 +255,8 @@ html, body {
 	position:relative;
 	top: 0px;
 	left: 215px;
-	width: 250px;
-	height: 400px;
+	width: 255px;
+	height: 300px;
 	z-index: 199;
 }
 
