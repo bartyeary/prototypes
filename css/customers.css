@@ -1,0 +1,413 @@
+/*REDHEAD*/
+#redhead_head {
+	position:absolute;
+	top:-10px;
+	left:0px;
+}
+#redhead_eyesOpen {
+	position:absolute;
+	top:-2px;
+	left:0px;
+	transform-origin: 50% 55%;
+	animation: redhead_eyesOpen 4s ease-out infinite alternate;
+}
+@keyframes redhead_eyesOpen{
+	0%{
+		transform: scale(1,1);
+	}
+	45%{
+		transform: scale(1,1);
+	}
+	50%{
+		transform: scale(1,0);
+	}
+	100%{
+		transform: scale(1,0);
+	}
+}
+#redhead_eyesClosed {
+	position:absolute;
+	top:-2px;
+	left:0px;
+	transform-origin: 50% 52%;
+	animation: redhead_eyesClosed 4s ease-out infinite alternate;
+}
+@keyframes redhead_eyesClosed {
+	0%{
+		transform: scale(1,0);
+	}
+	42%{
+		transform: scale(1,0);
+	}
+	48%{
+		transform: scale(1,1);
+	}
+	100%{
+		transform: scale(1,1);
+	}
+}
+#redhead_mouth {
+	position:absolute;
+	top:-1px;
+	left:0px;
+	width: 64px;
+	height: 125px;
+	transform-origin: 50% 50%;
+	animation: chewing 4s ease-in-out infinite alternate;
+}
+@keyframes chewing{
+	0%{
+		transform: scale(1.2,1.2);
+	}
+	5%{
+		transform: scale(.2,.2);
+	}
+	10%{
+		transform: scale(1.2,1.2);
+	}
+	15%{
+		transform: scale(.2,.2);
+	}
+	20%{
+		transform: scale(1.2,1.2);
+	}
+	25%{
+		transform: scale(.2,.2);
+	}
+	30%{
+		transform: scale(1.2,1.2);
+	}
+	100%{
+		transform: scale(1.2,1.2);
+	}
+}
+#redhead_bubble {
+	position:absolute;
+	top:-1px;
+	left:0px;
+	width: 63px;
+	height: 130px;
+	animation: blowbubble 4s ease-in-out infinite alternate;
+}
+@keyframes blowbubble{
+	0%{
+		transform: scale(0, 0);
+	}
+	10%{
+		transform: scale(0, 0);
+	}
+	100%{
+		transform: scale(1.2, 1.2);
+	}
+}
+#redhead_tail {
+	position:absolute;
+	top:0px;
+	left:0px;
+}
+
+/*TIGER*/
+#tigerhead {
+	position:absolute;
+	width: 100px;
+	transform-origin: 50%, 50%;
+	animation: tigeroll 1s ease-in-out infinite alternate;
+}
+@keyframes tigeroll {
+	0% {
+		transform: rotate(7deg);
+	}
+	100% {
+		transform: rotate(-7deg);
+	}
+}
+#tigerheadbkgrd {
+	position:absolute;
+	width: 100px;
+	top: -60px;
+}
+#tigereye1 {
+	top: -60px;
+	position:absolute;
+	width: 100px;
+	animation: tigereyeopen 2s ease-in-out infinite;
+	transform-origin: 36% 40%;
+}
+@keyframes tigereyeopen {
+	0% {
+		transform: scale(1, 1);
+	}
+	50% {
+		transform: scale(1, 1);
+	}
+	60% {
+		transform: scale(0);
+	}
+	80% {
+		transform: scale(0);
+	}
+	90% {
+		transform: scale(1, 1);
+	}
+	100% {
+		transform: scale(1, 1);
+	}
+}
+#tigereye1closed {
+	top: -58px;
+	position:absolute;
+	width: 100px;
+	animation: tigereyeclosed 2s ease-in-out infinite;
+	transform-origin: 36% 40%;
+}
+@keyframes tigereyeclosed {
+	0% {
+		transform: scale(0);
+	}
+	50% {
+		transform: scale(0);
+	}
+	60% {
+		transform: scale(1 ,1);
+	}
+	80% {
+		transform: scale(1, 1);
+	}
+	90% {
+		transform: scale(0);
+	}
+	100% {
+		transform: scale(0);
+	}
+}
+#tigereye2 {
+	top: -60px;
+	position:absolute;
+	width: 100px;
+	left: 28px;
+	animation: tigereyeopen2 2s ease-in-out infinite;
+	transform-origin: 36% 40%;
+}
+@keyframes tigereyeopen2 {
+	0% {
+		transform: scale(1, 1);
+	}
+	50% {
+		transform: scale(1, 1);
+	}
+	60% {
+		transform: scale(0);
+	}
+	80% {
+		transform: scale(0);
+	}
+	90% {
+		transform: scale(1, 1);
+	}
+	100% {
+		transform: scale(1, 1);
+	}
+}
+#tigereye2closed {
+	top: -58px;
+	position:absolute;
+	width: 100px;
+	left: 28px;
+	animation: tigereyeclosed2 2s ease-in-out infinite;
+	transform-origin: 36% 40%;
+}
+@keyframes tigereyeclosed2 {
+	0% {
+		transform: scale(0);
+	}
+	50% {
+		transform: scale(0);
+	}
+	60% {
+		transform: scale(1 ,1);
+	}
+	80% {
+		transform: scale(1, 1);
+	}
+	90% {
+		transform: scale(0);
+	}
+	100% {
+		transform: scale(0);
+	}
+}
+#tigersmile {
+	top: -60px;
+	position:absolute;
+	width: 100px;
+	animation: tigersmile 2s ease-in-out infinite ;
+}
+@keyframes tigersmile {
+	0% {
+		transform: scaleX(.7);
+	}
+	50% {
+		transform: scaleX(.7);
+	}
+	60% {
+		transform: scaleX(1);
+	}
+	80% {
+		transform: scaleX(1);
+	}
+	90% {
+		transform: scaleX(.7);
+	}
+	100% {
+		transform: scaleX(.7);
+	}
+}
+
+/*MONKEY*/
+#monkeyholder {
+	position:absolute;
+	width: 100px;
+	animation: monkeylaugh 2s ease-in-out infinite;
+}
+@keyframes monkeylaugh{
+	0% {
+		transform: translateY(10px);
+	}
+	45% {
+		transform: translateY(10px);
+	}
+	50% {
+		transform: translateY(0px);
+	}
+	55% {
+		transform: translateY(10px);
+	}
+	60% {
+		transform: translateY(0px);
+	}
+	65% {
+		transform: translateY(8px);
+	}
+	70% {
+		transform: translateY(0px);
+	}
+	75% {
+		transform: translateY(7px);
+	}
+	100%{
+		transform: translateY(10px);
+	}
+}
+
+#monkeyhead {
+	position:absolute;
+	width: 100px;
+	left: 15px;
+	top: 5px;
+}
+#monkeyeye1 {
+	position:absolute;
+	width: 100px;
+	left: 0px;
+	top: 0px;
+	animation: monkeyclose1 2s ease-in-out infinite;
+}
+@keyframes monkeyclose1 {
+	0% {
+		transform: scaleY(1);
+	}
+	45% {
+		transform: scaleY(1);
+	}
+	50% {
+		transform: scaleY(.2);
+	}
+	95% {
+		transform: scaleY(1);
+	}
+	100% {
+		transform: scaleY(.2);
+	}
+}
+
+#monkeyeye2 {
+	position:absolute;
+	width: 100px;
+	left: 15px;
+	top: 0px;
+	animation: monkeyclose2 2s ease-in-out infinite;
+}
+@keyframes monkeyclose2 {
+	0% {
+		transform: scaleY(1);
+	}
+	45% {
+		transform: scaleY(1);
+	}
+	50% {
+		transform: scaleY(.2);
+	}
+	95% {
+		transform: scaleY(1);
+	}
+	100% {
+		transform: scaleY(.2);
+	}
+}
+
+#monkeymouthsmile {
+	position:absolute;
+	width: 100px;
+	top: 0px;
+	animation: monkeysmile 2s ease-in-out infinite;
+	transform-origin: 50% 70%;
+}
+@keyframes monkeysmile{
+	0% {
+		transform: scale(0);
+	}
+	50% {
+		transform: scale(0);
+	}
+	51% {
+		transform: scale(.5, .7);
+	}
+	70% {
+		transform: scale(1, 1);
+	}
+	100% {
+		transform: scale(1, 1);
+	}
+}
+#monkeymouthoh {
+	position:absolute;
+	width: 100px;
+	top: 0px;
+	animation: monkeyoh 2s ease-in-out infinite;
+	transform-origin: 50% 70%;
+}
+@keyframes monkeyoh{
+	0% {
+		transform: scale(1, 1);
+	}
+	20% {
+		transform: scale(.5, .5);
+	}
+	30% {
+		transform: scale(1, 1);
+	}
+	40% {
+		transform: scale(.5, .5);
+	}
+	50% {
+		transform: scale(1, 1);
+	}
+	55% {
+		transform: scale(0, 0);
+	}
+	100% {
+		transform: scale(0, 0);
+	}
+}
+
+}

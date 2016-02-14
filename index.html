@@ -9,16 +9,21 @@
 
   	<title>Togetheroo</title>
 
-  	<link rel="stylesheet" type="text/css" href="css/animation.css">
-  	<link rel="stylesheet" type="text/css" href="css/style.css">
-  	<link rel="stylesheet" type="text/css" href="css/app.css">
-
+    <link rel="stylesheet" type="text/css" href="css/customers.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
   </head>
 
   <body class="clearfix">
     <div id="canvasHolder">
+
+      <svg id="snapsvg">
+
+      </svg>
+
 
       <div class="strawberry" class="no-select" data-letter="S">
         <img id="strawberry" class="no-select" src="images/strawberry.svg">
@@ -81,11 +86,12 @@
         
       </div>
 
-      <div id="coinspin">
+      <div id="coin">
       </div>
 
       <div id="loader">
       </div>
+
 
       <div id="cardPos1">
 
@@ -169,6 +175,49 @@
                   </div>
                   <div id="monkeymouthoh">
                     <img src="images/character/monkey_oh.svg">
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="backface">
+              <img id="banana" class="no-select" src="images/banana.svg">
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div id="cardPos3">
+
+        <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+
+          <div class="flipper">
+
+            <div class="frontface">
+
+              <div id="redheadPos">
+                <div id="redhead_head">
+                  <div>
+                    <img src="images/character/redhead_head.svg">
+                  </div>
+                  <div id="redhead_eyesOpen">
+                    <img src="images/character/redhead_eyesOpen.svg">
+                  </div>
+                  <div id="redhead_eyesClosed">
+                    <img src="images/character/redhead_eyesClosed.svg">
+                  </div>
+                  <div id="redhead_mouth">
+                    <img src="images/character/redhead_mouth.svg">
+                  </div>
+                  <div id="redhead_bubble">
+                    <img src="images/character/redhead_bubble.svg">
+                  </div>
+                  <div id="redhead_tail">
+                    <img src="images/character/redhead_tail.svg">
                   </div>
                 </div>
               </div>
@@ -290,10 +339,13 @@
 				</div> <!-- END NAVIGATION OF APPS -->
 		
 		<footer id="footer"></footer>
+
 		<script language="javascript" type="text/javascript" src="js/blender.js"></script>
-    <script>
-    var myDataRef = new Firebase('https://fv88cfe2zjm.firebaseio-demo.com/');
-    </script>
+    <script language="javascript" type="text/javascript" src="js/snap.svg-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/plugins/CSSPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/easing/EasePack.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenLite.min.js"></script>
+    <script language="javascript" type="text/javascript" src="js/main.js"></script>
 	</body>
 </html>
 
