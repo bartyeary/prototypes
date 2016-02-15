@@ -25,15 +25,17 @@
 <g id="fisherman_x5F_beard_1_">
 </g>
 <g id="fisherman_x5F_pipe_1_">
-	<g id="fisherman_x5F_pipe_4_">
-		<line class="st6" x1="30.6" y1="62.5" x2="22.3" y2="66.8"/>
-		<path class="st7" d="M20.1,70.2L20.1,70.2c-1.9,0.6-4-0.5-4.6-2.4l-0.9-2.9c-0.2-0.7-0.2-1.4,0-2.1c0.6-1.8,4.2-3,6-1.7
-			c0.5,0.4,0.8,1,1,1.6l0.9,2.9C23.1,67.5,22,69.6,20.1,70.2z"/>
-		<ellipse transform="matrix(0.9697 -0.2443 0.2443 0.9697 -14.6837 6.2139)" class="st8" cx="17.7" cy="62.3" rx="3.1" ry="1.6"/>
-	</g>
 </g>
 <g id="fisherman_x5F_eyes">
 </g>
 <g id="fisherman_x5F_bubble">
+	<g id="fisherman_x5F_smoke_4_">
+		
+			<radialGradient id="SVGID_1_" cx="17.854" cy="-158.5707" r="5.2773" gradientTransform="matrix(1 0 0 -1 0 -102)" gradientUnits="userSpaceOnUse">
+			<stop  offset="0" style="stop-color:#F0F0F0;stop-opacity:0.2"/>
+			<stop  offset="1" style="stop-color:#FFFFFF"/>
+		</radialGradient>
+		<circle class="st10" cx="17.9" cy="56.6" r="5.3"/>
+	</g>
 </g>
 </svg>

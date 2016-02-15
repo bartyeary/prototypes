@@ -1,3 +1,25 @@
+/*COP*/
+#cop_head {
+	position:absolute;
+	top:0px;
+}
+#cop_hat {
+	position:absolute;
+	top:0px;
+}
+#cop_eyes {
+	position:absolute;
+	top:0px;
+}
+#cop_mustache {
+	position:absolute;
+	top:1px;
+}
+#cop_smile {
+	position:absolute;
+	top:1px;
+}
+
 /*FISHERMAN*/
 #fisherman_head {
 	position:absolute;
@@ -23,7 +45,7 @@
 	position:absolute;
 	top:0px;
 }
-#fisherman_smoke {
+#fisherman_bubble {
 	position:absolute;
 	top:0px;
 }
