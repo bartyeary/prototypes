@@ -78,7 +78,12 @@ html, body {
   position:absolute;
   left: 0px;
   top: 5px;
-
+}
+#fishermanPos {
+  position:absolute;
+  left: 7px;
+  top: -5px;
+  -webkit-transform: rotate(4deg);
 }
 
 #cardPos1 {
@@ -95,6 +100,11 @@ html, body {
   position:absolute;
   top:200px;
   left:630px;
+}
+#cardPos4 {
+  position:absolute;
+  top:200px;
+  left:720px;
 }
 
 /* entire container, keeps perspective */

@@ -1,15 +1,55 @@
+/*FISHERMAN*/
+#fisherman_head {
+	position:absolute;
+	top:0px;
+}
+#fisherman_eyesOpen {
+	position:absolute;
+	top:0px;
+}
+#fisherman_smile {
+	position:absolute;
+	top:0px;
+}
+#fisherman_hat {
+	position:absolute;
+	top:1px;
+}
+#fisherman_beard {
+	position:absolute;
+	top:0px;
+}
+#fisherman_pipe {
+	position:absolute;
+	top:0px;
+}
+#fisherman_smoke {
+	position:absolute;
+	top:0px;
+}
+
+
 /*REDHEAD*/
 #redhead_head {
 	position:absolute;
 	top:-10px;
 	left:0px;
+	animation: 1s ease-in-out infinite alternate redhead_roll;
+}
+@keyframes redhead_roll{
+	0%{
+		transform: rotate(5deg);
+	}
+	50%{
+		transform: rotate(-5deg);
+	}
 }
 #redhead_eyesOpen {
 	position:absolute;
 	top:-2px;
 	left:0px;
 	transform-origin: 50% 55%;
-	animation: redhead_eyesOpen 4s ease-out infinite alternate;
+	animation: 4s ease-out infinite alternate redhead_eyesOpen;
 }
 @keyframes redhead_eyesOpen{
 	0%{
@@ -30,7 +70,7 @@
 	top:-2px;
 	left:0px;
 	transform-origin: 50% 52%;
-	animation: redhead_eyesClosed 4s ease-out infinite alternate;
+	animation: 4s ease-out infinite alternate redhead_eyesClosed;
 }
 @keyframes redhead_eyesClosed {
 	0%{
@@ -53,7 +93,7 @@
 	width: 64px;
 	height: 125px;
 	transform-origin: 50% 50%;
-	animation: chewing 4s ease-in-out infinite alternate;
+	animation: 4s ease-in-out infinite alternate chewing;
 }
 @keyframes chewing{
 	0%{
@@ -87,7 +127,7 @@
 	left:0px;
 	width: 63px;
 	height: 130px;
-	animation: blowbubble 4s ease-in-out infinite alternate;
+	animation: 4s ease-in-out infinite alternate blowbubble;
 }
 @keyframes blowbubble{
 	0%{
@@ -104,6 +144,16 @@
 	position:absolute;
 	top:0px;
 	left:0px;
+	transform-origin: 50% 20%;
+	animation: .5s ease-in-out infinite alternate redhead_tailwag;
+}
+@keyframes redhead_tailwag{
+	0%{
+		transform: scaleY(.9);
+	}
+	100%{
+		transform: scaleY(1);
+	}
 }
 
 /*TIGER*/
@@ -111,7 +161,7 @@
 	position:absolute;
 	width: 100px;
 	transform-origin: 50%, 50%;
-	animation: tigeroll 1s ease-in-out infinite alternate;
+	animation: 1s ease-in-out infinite alternate tigeroll;
 }
 @keyframes tigeroll {
 	0% {
@@ -130,7 +180,7 @@
 	top: -60px;
 	position:absolute;
 	width: 100px;
-	animation: tigereyeopen 2s ease-in-out infinite;
+	animation: 2s ease-in-out infinite tigereyeopen;
 	transform-origin: 36% 40%;
 }
 @keyframes tigereyeopen {
@@ -157,7 +207,7 @@
 	top: -58px;
 	position:absolute;
 	width: 100px;
-	animation: tigereyeclosed 2s ease-in-out infinite;
+	animation: 2s ease-in-out infinite tigereyeclosed;
 	transform-origin: 36% 40%;
 }
 @keyframes tigereyeclosed {
@@ -185,7 +235,7 @@
 	position:absolute;
 	width: 100px;
 	left: 28px;
-	animation: tigereyeopen2 2s ease-in-out infinite;
+	animation: 2s ease-in-out infinite tigereyeopen2;
 	transform-origin: 36% 40%;
 }
 @keyframes tigereyeopen2 {
@@ -213,7 +263,7 @@
 	position:absolute;
 	width: 100px;
 	left: 28px;
-	animation: tigereyeclosed2 2s ease-in-out infinite;
+	animation: 2s ease-in-out infinite tigereyeclosed2;
 	transform-origin: 36% 40%;
 }
 @keyframes tigereyeclosed2 {
@@ -240,7 +290,7 @@
 	top: -60px;
 	position:absolute;
 	width: 100px;
-	animation: tigersmile 2s ease-in-out infinite ;
+	animation: 2s ease-in-out infinite tigersmile;
 }
 @keyframes tigersmile {
 	0% {
@@ -267,7 +317,7 @@
 #monkeyholder {
 	position:absolute;
 	width: 100px;
-	animation: monkeylaugh 2s ease-in-out infinite;
+	animation: 2s ease-in-out infinite monkeylaugh;
 }
 @keyframes monkeylaugh{
 	0% {
@@ -310,7 +360,7 @@
 	width: 100px;
 	left: 0px;
 	top: 0px;
-	animation: monkeyclose1 2s ease-in-out infinite;
+	animation: 2s ease-in-out infinite monkeyclose1;
 }
 @keyframes monkeyclose1 {
 	0% {
@@ -335,7 +385,7 @@
 	width: 100px;
 	left: 15px;
 	top: 0px;
-	animation: monkeyclose2 2s ease-in-out infinite;
+	animation: 2s ease-in-out infinite monkeyclose2;
 }
 @keyframes monkeyclose2 {
 	0% {
@@ -359,7 +409,7 @@
 	position:absolute;
 	width: 100px;
 	top: 0px;
-	animation: monkeysmile 2s ease-in-out infinite;
+	animation: 2s ease-in-out infinite monkeysmile;
 	transform-origin: 50% 70%;
 }
 @keyframes monkeysmile{
@@ -383,7 +433,7 @@
 	position:absolute;
 	width: 100px;
 	top: 0px;
-	animation: monkeyoh 2s ease-in-out infinite;
+	animation: 2s ease-in-out infinite monkeyoh;
 	transform-origin: 50% 70%;
 }
 @keyframes monkeyoh{
